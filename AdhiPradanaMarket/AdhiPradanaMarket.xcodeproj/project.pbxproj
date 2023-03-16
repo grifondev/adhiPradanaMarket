@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */; };
+		04DE787029C06E1000152C4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786F29C06E1000152C4A /* ContentView.swift */; };
+		04DE787229C06E1100152C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE787129C06E1100152C4A /* Assets.xcassets */; };
+		04DE787529C06E1100152C4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE787429C06E1100152C4A /* Preview Assets.xcassets */; };
+		04DE787F29C06E1100152C4A /* AdhiPradanaMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE787E29C06E1100152C4A /* AdhiPradanaMarketTests.swift */; };
+		04DE788929C06E1100152C4A /* AdhiPradanaMarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE788829C06E1100152C4A /* AdhiPradanaMarketUITests.swift */; };
+		04DE788B29C06E1100152C4A /* AdhiPradanaMarketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE788A29C06E1100152C4A /* AdhiPradanaMarketUITestsLaunchTests.swift */; };
+		04DE78A629C3361100152C4A /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE789D29C3361100152C4A /* Montserrat-BoldItalic.ttf */; };
+		04DE78A729C3361100152C4A /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE789E29C3361100152C4A /* Montserrat-ExtraLight.ttf */; };
+		04DE78A829C3361100152C4A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE789F29C3361100152C4A /* Montserrat-Bold.ttf */; };
+		04DE78A929C3361100152C4A /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE78A029C3361100152C4A /* Montserrat-SemiBold.ttf */; };
+		04DE78AA29C3361100152C4A /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE78A129C3361100152C4A /* Montserrat-ExtraLightItalic.ttf */; };
+		04DE78AB29C3361100152C4A /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE78A229C3361100152C4A /* Montserrat-Black.ttf */; };
+		04DE78AC29C3361100152C4A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE78A329C3361100152C4A /* Montserrat-Regular.ttf */; };
+		04DE78AD29C3361100152C4A /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE78A429C3361100152C4A /* Montserrat-Italic.ttf */; };
+		04DE78AE29C3361100152C4A /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04DE78A529C3361100152C4A /* Montserrat-SemiBoldItalic.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04DE787B29C06E1100152C4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04DE786229C06E1000152C4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04DE786929C06E1000152C4A;
+			remoteInfo = AdhiPradanaMarket;
+		};
+		04DE788529C06E1100152C4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04DE786229C06E1000152C4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04DE786929C06E1000152C4A;
+			remoteInfo = AdhiPradanaMarket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04DE786A29C06E1000152C4A /* AdhiPradanaMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdhiPradanaMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketApp.swift; sourceTree = "<group>"; };
+		04DE786F29C06E1000152C4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04DE787129C06E1100152C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04DE787429C06E1100152C4A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04DE787A29C06E1100152C4A /* AdhiPradanaMarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdhiPradanaMarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DE787E29C06E1100152C4A /* AdhiPradanaMarketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketTests.swift; sourceTree = "<group>"; };
+		04DE788429C06E1100152C4A /* AdhiPradanaMarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdhiPradanaMarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DE788829C06E1100152C4A /* AdhiPradanaMarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketUITests.swift; sourceTree = "<group>"; };
+		04DE788A29C06E1100152C4A /* AdhiPradanaMarketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04DE789B29C24C3000152C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04DE789D29C3361100152C4A /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		04DE789E29C3361100152C4A /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		04DE789F29C3361100152C4A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		04DE78A029C3361100152C4A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		04DE78A129C3361100152C4A /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		04DE78A229C3361100152C4A /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		04DE78A329C3361100152C4A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		04DE78A429C3361100152C4A /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		04DE78A529C3361100152C4A /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04DE786729C06E1000152C4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DE787729C06E1100152C4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DE788129C06E1100152C4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04DE786129C06E1000152C4A = {
+			isa = PBXGroup;
+			children = (
+				04DE789C29C3361100152C4A /* Shared */,
+				04DE786C29C06E1000152C4A /* AdhiPradanaMarket */,
+				04DE787D29C06E1100152C4A /* AdhiPradanaMarketTests */,
+				04DE788729C06E1100152C4A /* AdhiPradanaMarketUITests */,
+				04DE786B29C06E1000152C4A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04DE786B29C06E1000152C4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04DE786A29C06E1000152C4A /* AdhiPradanaMarket.app */,
+				04DE787A29C06E1100152C4A /* AdhiPradanaMarketTests.xctest */,
+				04DE788429C06E1100152C4A /* AdhiPradanaMarketUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04DE786C29C06E1000152C4A /* AdhiPradanaMarket */ = {
+			isa = PBXGroup;
+			children = (
+				04DE789B29C24C3000152C4A /* Info.plist */,
+				04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */,
+				04DE786F29C06E1000152C4A /* ContentView.swift */,
+				04DE787129C06E1100152C4A /* Assets.xcassets */,
+				04DE787329C06E1100152C4A /* Preview Content */,
+			);
+			path = AdhiPradanaMarket;
+			sourceTree = "<group>";
+		};
+		04DE787329C06E1100152C4A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04DE787429C06E1100152C4A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04DE787D29C06E1100152C4A /* AdhiPradanaMarketTests */ = {
+			isa = PBXGroup;
+			children = (
+				04DE787E29C06E1100152C4A /* AdhiPradanaMarketTests.swift */,
+			);
+			path = AdhiPradanaMarketTests;
+			sourceTree = "<group>";
+		};
+		04DE788729C06E1100152C4A /* AdhiPradanaMarketUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04DE788829C06E1100152C4A /* AdhiPradanaMarketUITests.swift */,
+				04DE788A29C06E1100152C4A /* AdhiPradanaMarketUITestsLaunchTests.swift */,
+			);
+			path = AdhiPradanaMarketUITests;
+			sourceTree = "<group>";
+		};
+		04DE789C29C3361100152C4A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				04DE789D29C3361100152C4A /* Montserrat-BoldItalic.ttf */,
+				04DE789E29C3361100152C4A /* Montserrat-ExtraLight.ttf */,
+				04DE789F29C3361100152C4A /* Montserrat-Bold.ttf */,
+				04DE78A029C3361100152C4A /* Montserrat-SemiBold.ttf */,
+				04DE78A129C3361100152C4A /* Montserrat-ExtraLightItalic.ttf */,
+				04DE78A229C3361100152C4A /* Montserrat-Black.ttf */,
+				04DE78A329C3361100152C4A /* Montserrat-Regular.ttf */,
+				04DE78A429C3361100152C4A /* Montserrat-Italic.ttf */,
+				04DE78A529C3361100152C4A /* Montserrat-SemiBoldItalic.ttf */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04DE786929C06E1000152C4A /* AdhiPradanaMarket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DE788E29C06E1100152C4A /* Build configuration list for PBXNativeTarget "AdhiPradanaMarket" */;
+			buildPhases = (
+				04DE786629C06E1000152C4A /* Sources */,
+				04DE786729C06E1000152C4A /* Frameworks */,
+				04DE786829C06E1000152C4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdhiPradanaMarket;
+			productName = AdhiPradanaMarket;
+			productReference = 04DE786A29C06E1000152C4A /* AdhiPradanaMarket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04DE787929C06E1100152C4A /* AdhiPradanaMarketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DE789129C06E1100152C4A /* Build configuration list for PBXNativeTarget "AdhiPradanaMarketTests" */;
+			buildPhases = (
+				04DE787629C06E1100152C4A /* Sources */,
+				04DE787729C06E1100152C4A /* Frameworks */,
+				04DE787829C06E1100152C4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04DE787C29C06E1100152C4A /* PBXTargetDependency */,
+			);
+			name = AdhiPradanaMarketTests;
+			productName = AdhiPradanaMarketTests;
+			productReference = 04DE787A29C06E1100152C4A /* AdhiPradanaMarketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04DE788329C06E1100152C4A /* AdhiPradanaMarketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DE789429C06E1100152C4A /* Build configuration list for PBXNativeTarget "AdhiPradanaMarketUITests" */;
+			buildPhases = (
+				04DE788029C06E1100152C4A /* Sources */,
+				04DE788129C06E1100152C4A /* Frameworks */,
+				04DE788229C06E1100152C4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04DE788629C06E1100152C4A /* PBXTargetDependency */,
+			);
+			name = AdhiPradanaMarketUITests;
+			productName = AdhiPradanaMarketUITests;
+			productReference = 04DE788429C06E1100152C4A /* AdhiPradanaMarketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04DE786229C06E1000152C4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					04DE786929C06E1000152C4A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					04DE787929C06E1100152C4A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 04DE786929C06E1000152C4A;
+					};
+					04DE788329C06E1100152C4A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 04DE786929C06E1000152C4A;
+					};
+				};
+			};
+			buildConfigurationList = 04DE786529C06E1000152C4A /* Build configuration list for PBXProject "AdhiPradanaMarket" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04DE786129C06E1000152C4A;
+			productRefGroup = 04DE786B29C06E1000152C4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04DE786929C06E1000152C4A /* AdhiPradanaMarket */,
+				04DE787929C06E1100152C4A /* AdhiPradanaMarketTests */,
+				04DE788329C06E1100152C4A /* AdhiPradanaMarketUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04DE786829C06E1000152C4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DE78AC29C3361100152C4A /* Montserrat-Regular.ttf in Resources */,
+				04DE78AE29C3361100152C4A /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				04DE78A929C3361100152C4A /* Montserrat-SemiBold.ttf in Resources */,
+				04DE78AB29C3361100152C4A /* Montserrat-Black.ttf in Resources */,
+				04DE78A829C3361100152C4A /* Montserrat-Bold.ttf in Resources */,
+				04DE78A629C3361100152C4A /* Montserrat-BoldItalic.ttf in Resources */,
+				04DE78AD29C3361100152C4A /* Montserrat-Italic.ttf in Resources */,
+				04DE78A729C3361100152C4A /* Montserrat-ExtraLight.ttf in Resources */,
+				04DE787529C06E1100152C4A /* Preview Assets.xcassets in Resources */,
+				04DE787229C06E1100152C4A /* Assets.xcassets in Resources */,
+				04DE78AA29C3361100152C4A /* Montserrat-ExtraLightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DE787829C06E1100152C4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DE788229C06E1100152C4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04DE786629C06E1000152C4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DE787029C06E1000152C4A /* ContentView.swift in Sources */,
+				04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DE787629C06E1100152C4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DE787F29C06E1100152C4A /* AdhiPradanaMarketTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DE788029C06E1100152C4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DE788B29C06E1100152C4A /* AdhiPradanaMarketUITestsLaunchTests.swift in Sources */,
+				04DE788929C06E1100152C4A /* AdhiPradanaMarketUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04DE787C29C06E1100152C4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04DE786929C06E1000152C4A /* AdhiPradanaMarket */;
+			targetProxy = 04DE787B29C06E1100152C4A /* PBXContainerItemProxy */;
+		};
+		04DE788629C06E1100152C4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04DE786929C06E1000152C4A /* AdhiPradanaMarket */;
+			targetProxy = 04DE788529C06E1100152C4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04DE788C29C06E1100152C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04DE788D29C06E1100152C4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04DE788F29C06E1100152C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AdhiPradanaMarket/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdhiPradanaMarket/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.AdhiPradanaMarket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04DE789029C06E1100152C4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AdhiPradanaMarket/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdhiPradanaMarket/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.AdhiPradanaMarket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04DE789229C06E1100152C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.AdhiPradanaMarketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdhiPradanaMarket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdhiPradanaMarket";
+			};
+			name = Debug;
+		};
+		04DE789329C06E1100152C4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.AdhiPradanaMarketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdhiPradanaMarket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdhiPradanaMarket";
+			};
+			name = Release;
+		};
+		04DE789529C06E1100152C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.AdhiPradanaMarketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AdhiPradanaMarket;
+			};
+			name = Debug;
+		};
+		04DE789629C06E1100152C4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = none.AdhiPradanaMarketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AdhiPradanaMarket;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04DE786529C06E1000152C4A /* Build configuration list for PBXProject "AdhiPradanaMarket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DE788C29C06E1100152C4A /* Debug */,
+				04DE788D29C06E1100152C4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DE788E29C06E1100152C4A /* Build configuration list for PBXNativeTarget "AdhiPradanaMarket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DE788F29C06E1100152C4A /* Debug */,
+				04DE789029C06E1100152C4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DE789129C06E1100152C4A /* Build configuration list for PBXNativeTarget "AdhiPradanaMarketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DE789229C06E1100152C4A /* Debug */,
+				04DE789329C06E1100152C4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DE789429C06E1100152C4A /* Build configuration list for PBXNativeTarget "AdhiPradanaMarketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DE789529C06E1100152C4A /* Debug */,
+				04DE789629C06E1100152C4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04DE786229C06E1000152C4A /* Project object */;
+}
