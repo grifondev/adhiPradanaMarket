@@ -90,21 +90,22 @@ struct LoginView: View {
                 .padding(.horizontal, 43)
                 .padding(.top, 35)
                 
-                Button {
-                    
-                } label: {
+                NavigationLink(destination: ProfileView(), label:
+                {
                     Text("Login").font(.custom("Montserrat-Bold", size: 16))
                         .foregroundColor(Color(red: 234/255, green: 234/255, blue: 234/255))
                         .frame(width: 290, height: 45)
                         .background(Color(red: 78/255, green: 85/255, blue: 215/255))
                         .cornerRadius(15)
                         .padding(.top,100)
-                }.buttonStyle(PlainButtonStyle())
+                })
+                
                 
                 Spacer()
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
