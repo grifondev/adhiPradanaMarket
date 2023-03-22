@@ -19,6 +19,7 @@
 		042C940429C3551F005833F7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C940329C3551F005833F7 /* SignInView.swift */; };
 		042C940829C39A73005833F7 /* Apple_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 042C940629C39A73005833F7 /* Apple_picture.png */; };
 		042C940929C39A73005833F7 /* Google_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 042C940729C39A73005833F7 /* Google_picture.png */; };
+		042C940C29CB0FC3005833F7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C940B29CB0FC3005833F7 /* ProfileView.swift */; };
 		04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */; };
 		04DE787029C06E1000152C4A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786F29C06E1000152C4A /* LoginView.swift */; };
 		04DE787229C06E1100152C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE787129C06E1100152C4A /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		042C940329C3551F005833F7 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		042C940629C39A73005833F7 /* Apple_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Apple_picture.png; sourceTree = "<group>"; };
 		042C940729C39A73005833F7 /* Google_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Google_picture.png; sourceTree = "<group>"; };
+		042C940B29CB0FC3005833F7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		04DE786A29C06E1000152C4A /* AdhiPradanaMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdhiPradanaMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketApp.swift; sourceTree = "<group>"; };
 		04DE786F29C06E1000152C4A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		042C940A29CB0FA8005833F7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				042C940B29CB0FC3005833F7 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		04DE786129C06E1000152C4A = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		04DE786C29C06E1000152C4A /* AdhiPradanaMarket */ = {
 			isa = PBXGroup;
 			children = (
+				042C940A29CB0FA8005833F7 /* Profile */,
 				04DE78B029C3502700152C4A /* Sign in */,
 				04DE78AF29C34FDD00152C4A /* Login */,
 				04DE789B29C24C3000152C4A /* Info.plist */,
@@ -346,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042C940C29CB0FC3005833F7 /* ProfileView.swift in Sources */,
 				04DE787029C06E1000152C4A /* LoginView.swift in Sources */,
 				04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */,
 				042C940429C3551F005833F7 /* SignInView.swift in Sources */,
