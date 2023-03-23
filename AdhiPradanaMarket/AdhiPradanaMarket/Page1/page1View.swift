@@ -7,34 +7,196 @@
 
 import SwiftUI
 
-struct LatestDealsResponce: Codable {
-    var results: [ResultLatestDeals]
+
+struct FlashSaleResponce: Codable {
+    var flash_sale: [FlashSaleItem] = Array()
 }
 
-struct ResultLatestDeals: Codable {
+struct FlashSaleItem : Codable {
+    var category: String
+    var name: String
+    var price: Double
+    var discount: Int
+    var image_url: String
+}
+
+struct FlashSaleView : View {
+    var category: String
+    var name: String
+    var price: Double
+    var discount: Int
+    var image_url: String
+    var body: some View {
+        ZStack {
+            AsyncImage(url: URL(string: image_url), content: { image in
+                image.image?
+                    .resizable()
+                    .frame(width: 220, height: 175)
+                    .aspectRatio(100/70, contentMode: .fill)
+                    .cornerRadius(10)
+                    .controlSize(.mini)
+            })
+            Text(name)
+                .font(.custom("Montserrat-SemiBold", size: 10))
+                .frame(width: 90, height: 30)
+                .foregroundColor(Color.white)
+                .padding(.top, 70)
+                .padding(.trailing, 130)
+                .multilineTextAlignment(.leading)
+            ZStack
+            {
+                Rectangle()
+                    .frame(width: 50, height: 18)
+                    .foregroundColor(Color(red: 196/255, green: 196/255, blue: 196/255))
+                    .cornerRadius(60)
+                    .opacity(0.85)
+                    .padding(.top, 10)
+                    .padding(.trailing, 120)
+                Text(category)
+                    .font(.custom("Montserrat-SemiBold", size: 8))
+                    .frame(width: 20, height: 5)
+                    .foregroundColor(Color(red: 7/255, green: 6/255, blue: 4/255))
+                    .padding(.top, 10)
+                    .padding(.trailing, 115)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.trailing, 30)
+            .padding(.horizontal, 5)
+            
+            Text("$ " + String(price))
+                .padding(.top, 130)
+                .padding(.trailing, 170)
+                .font(.custom("Montserrat-SemiBold", size: 10))
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.leading)
+            
+            Circle()
+                .frame(width: 35, height: 35)
+                .foregroundColor(Color(red: 229/255, green: 233/255, blue: 239, opacity: 0.85))
+                .padding(.top, 120)
+                .padding(.leading, 165)
+            
+            Rectangle()
+                .frame(width: 14, height: 1)
+                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                .padding(.leading, 164)
+                .padding(.top, 120)
+            
+            Rectangle()
+                .frame(width: 1, height: 14)
+                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                .padding(.leading, 164)
+                .padding(.top, 120)
+            
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(red: 249/255, green: 58/255, blue: 58/255))
+                    .frame(width: 50, height: 18)
+                    .cornerRadius(60)
+                    .padding(.leading, 140)
+                    .padding(.bottom, 130)
+                Text(String(discount) + "% off")
+                    .foregroundColor(Color .white)
+                    .font(.custom("Montserrat-Regular", size: 10))
+                    .padding(.leading, 140)
+                    .padding(.bottom, 130)
+            }
+                
+        }
+            .frame(width: 220, height: 175)
+    }
+}
+
+struct LatestDealsResponce: Codable {
+    var latest: [LatestDealsItem] = Array()
+}
+
+struct LatestDealsItem: Codable {
     var category: String
     var name: String
     var price: Int
     var image_url: String
 }
 
-let myJSON = """
-        {
-            "category": "Cars",
-            "name": "BMW X6M",
-            "price": 35000,
-            "image_url": "https://mirbmw.ru/wp-content/uploads/2022/01/manhart-mhx6-700-01.jpg"
-
+struct latestView : View {
+    var category: String
+    var name: String
+    var price: Int
+    var image_url: String
+    var body: some View {
+        ZStack {
+            AsyncImage(url: URL(string: image_url), content: { image in
+                image.image?
+                    .resizable()
+                    .frame(width: 150, height: 115)
+                    .aspectRatio(100/50, contentMode: .fit)
+                    .cornerRadius(10)
+                    .controlSize(.regular)
+            })
+            Text(name)
+                .font(.custom("Montserrat-SemiBold", size: 10))
+                .frame(width: 80, height: 22)
+                .foregroundColor(Color.white)
+                .padding(.top, 40)
+                .padding(.trailing, 75)
+                .multilineTextAlignment(.leading)
+            ZStack
+            {
+                Rectangle()
+                    .frame(width: 35, height: 12)
+                    .foregroundColor(Color(red: 196/255, green: 196/255, blue: 196/255))
+                    .cornerRadius(60)
+                    .opacity(0.85)
+                    .padding(.top, 10)
+                    .padding(.trailing, 70)
+                Text(category)
+                    .font(.custom("Montserrat-SemiBold", size: 5))
+                    .frame(width: 20, height: 5)
+                    .foregroundColor(Color(red: 7/255, green: 6/255, blue: 4/255))
+                    .padding(.top, 10)
+                    .padding(.trailing, 68)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.trailing, 30)
+            
+            Text("$ " + String(price))
+                .padding(.top, 90)
+                .padding(.trailing, 90)
+                .font(.custom("Montserrat-SemiBold", size: 10))
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.leading)
+            
+            Circle()
+                .frame(width: 20, height: 20)
+                .foregroundColor(Color(red: 229/255, green: 233/255, blue: 239, opacity: 0.85))
+                .padding(.top, 80)
+                .padding(.leading, 120)
+            
+            Rectangle()
+                .frame(width: 7, height: 1)
+                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                .padding(.leading, 120)
+                .padding(.top, 80)
+            
+            Rectangle()
+                .frame(width: 1, height: 7)
+                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                .padding(.leading, 120)
+                .padding(.top, 80)
+                
         }
-
-""".data(using: .utf8)
+            .frame(width: 150, height: 115)
+    }
+}
 
 struct page1View: View {
     //@State private var currentLocation: String = "Russia"
     
     @State private var searchText: String = ""
     
-    @State private var resultLastDeals = [ResultLatestDeals]()
+    @State private var resultLastDeals = [LatestDealsItem]()
+    
+    @State private var resultFlashSale = [FlashSaleItem]()
     
     var body: some View {
         NavigationView {
@@ -62,9 +224,9 @@ struct page1View: View {
                             .padding(.leading, 48)
                     }
                 }
-                    .padding(.top, 21)
-                    .frame(width: 315)
-                    .padding(.trailing, 15)
+                .padding(.top, 21)
+                .frame(width: 315)
+                .padding(.trailing, 15)
                 HStack {
                     Text("Location")
                         .frame(width: 40, height: 8)
@@ -77,8 +239,8 @@ struct page1View: View {
                         .padding(.top, 15)
                         .padding(.leading, -5)
                 }
-                    .padding(.leading, 290)
-                    .padding(.top, -15)
+                .padding(.leading, 290)
+                .padding(.top, -15)
                 
                 ZStack {
                     Rectangle()
@@ -86,20 +248,20 @@ struct page1View: View {
                         .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
                         .cornerRadius(60)
                     
-                        TextField("What are you looking for?", text: $searchText)
-                            .font(.custom("Montserrat-Regular", size: 10))
-                            .foregroundColor(Color(red: 245/255, green: 246/255, blue: 247/255))
-                            .textContentType(.password)
-                            .multilineTextAlignment(.center)
-                            .frame(width: 290, height: 30)
-                            .cornerRadius(60)
+                    TextField("What are you looking for?", text: $searchText)
+                        .font(.custom("Montserrat-Regular", size: 10))
+                        .foregroundColor(Color(red: 245/255, green: 246/255, blue: 247/255))
+                        .textContentType(.password)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 290, height: 30)
+                        .cornerRadius(60)
                     
-                        Image(systemName: "magnifyingglass")
-                            .font(.system(size: 14, weight: .regular))
-                            .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
-                            .frame(width: 30,height: 30)
-                            .opacity(0.7)
-                            .padding(.leading, 210)
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 14, weight: .regular))
+                        .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
+                        .frame(width: 30,height: 30)
+                        .opacity(0.7)
+                        .padding(.leading, 210)
                 }.padding(.top, 10)
                 
                 HStack {
@@ -248,51 +410,284 @@ struct page1View: View {
                     }.padding(.horizontal, 5)
                 }
                     .padding(.top, 14)
-                    
-                HStack {
-                    Text("Latest deals")
-                        .font(.custom("Montserrat-SemiBold", size: 16))
-                        .padding(.top, 36)
-                        .padding(.leading, 10)
-                    Spacer()
-                    Text("View all")
-                        .font(.custom("Montserrat-Regular", size: 8))
-                        .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
-                        .padding(.trailing, 10)
-                        .padding(.top, 34)
-                }
-                    .frame(width: 350, height: 36)
-                    .onTapGesture {
-                        loadData()
+                Group {
+                    HStack {
+                        Text("Latest deals")
+                            .font(.custom("Montserrat-SemiBold", size: 16))
+                            .padding(.top, 36)
+                            .padding(.leading, 0)
+                        Spacer()
+                        Button {
+                            
+                        } label: {
+                            Text("View all")
+                                .font(.custom("Montserrat-Regular", size: 8))
+                                .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
+                                .padding(.trailing, 0)
+                                .padding(.top, 34)
+                        }
+                        
                     }
+                    .frame(width: 350, height: 36)
+                    .task {
+                        loadLatest()
+                    }
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(resultLastDeals, id: \.name) { deal in
+                                latestView(category: deal.category, name: deal.name, price: deal.price, image_url: deal.image_url)
+                            }
+                        }
+                    }
+                }
+                
+                Group {
+                    HStack {
+                        Text("Flash sale")
+                            .font(.custom("Montserrat-SemiBold", size: 16))
+                            .padding(.top, 36)
+                            .padding(.leading, 0)
+                        Spacer()
+                        Button {
+                            
+                        } label: {
+                            Text("View all")
+                                .font(.custom("Montserrat-Regular", size: 8))
+                                .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
+                                .padding(.trailing, 0)
+                                .padding(.top, 34)
+                        }
+                        
+                    }
+                    .frame(width: 350, height: 36)
+                    .task {
+                        loadFlashSale()
+                    }
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(resultFlashSale, id: \.name) { deal in
+                                FlashSaleView(category: deal.category, name: deal.name, price: deal.price, discount: deal.discount, image_url: deal.image_url)
+                            }
+                        }
+                    }
+                }
+                
+                ZStack
+                {
+                    Rectangle()
+                        .fill(Color(red: 1, green: 1, blue: 1))
+                        .frame(width: UIScreen.main.bounds.width, height: 80)
+                        .cornerRadius(60)
+                        .padding(.top, 20)
+                    HStack {
+                        
+                        Button {
+                            changeCircles("home")
+                            conditionsOfItemBar["home"] = true
+                        } label : {
+                            if conditionsOfItemBar["home"] == true
+                            {
+                                ZStack
+                                {
+                                    Circle()
+                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    Image(systemName: "homekit")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
+                                        .padding(25)
+                                }
+                            }
+                            else
+                            {
+                                ZStack
+                                {
+                                    Image(systemName: "homekit")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                                        .padding(25)
+                                }
+                            }
+                        }
+                        Button {
+                            changeCircles("heart")
+                            conditionsOfItemBar["heart"] = true
+                        } label : {
+                            if conditionsOfItemBar["heart"] == true
+                            {
+                                ZStack
+                                {
+                                    Circle()
+                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    Image(systemName: "suit.heart")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
+                                        .padding(25)
+                                }
+                            }
+                            else
+                            {
+                                ZStack
+                                {
+                                    Image(systemName: "suit.heart")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                                        .padding(25)
+                                }
+                            }
+                        }
+                        
+                        Button {
+                            changeCircles("cart")
+                            conditionsOfItemBar["cart"] = true
+                        } label : {
+                            if conditionsOfItemBar["cart"] == true
+                            {
+                                ZStack
+                                {
+                                    Circle()
+                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    Image(systemName: "cart")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
+                                        .padding(25)
+                                }
+                            }
+                            else
+                            {
+                                ZStack
+                                {
+                                    Image(systemName: "cart")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                                        .padding(25)
+                                }
+                            }
+                        }
+                        
+                        Button {
+                            changeCircles("messages")
+                            conditionsOfItemBar["messages"] = true
+                        } label : {
+                            if conditionsOfItemBar["messages"] == true
+                            {
+                                ZStack
+                                {
+                                    Circle()
+                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    Image(systemName: "message")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
+                                        .padding(25)
+                                }
+                            }
+                            else
+                            {
+                                ZStack
+                                {
+                                    Image(systemName: "message")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                                        .padding(25)
+                                }
+                            }
+                        }
+                        
+                        Button {
+                            changeCircles("profile")
+                            conditionsOfItemBar["profile"] = true
+                        } label : {
+                            if conditionsOfItemBar["profile"] == true
+                            {
+                                ZStack
+                                {
+                                    Circle()
+                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    Image(systemName: "person")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
+                                        .padding(25)
+                                }
+                            }
+                            else
+                            {
+                                ZStack
+                                {
+                                    Image(systemName: "person")
+                                        .resizable()
+                                        .frame(width: 15, height: 15)
+                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                                        .padding(25)
+                                }
+                            }
+                        }
+                    }   .padding()
+                        .padding(.bottom, -150)
+                }
                 
                 Spacer()
             }
         }
     }
     
-    func loadData() {
-        guard let url = URL(string:"https://run.mocky.io/v3/1a6f0ea0-fa32-438c-9918-f4c00028e126") else {
+    func loadLatest() {
+        guard let url = URL(string:"https://run.mocky.io/v3/cc0071a1-f06e-48fa-9e90-b1c2a61eaca7") else {
             print("Invalid URL!")
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let taskForLatest = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error == nil && data != nil && data!.count > 0 {
-                print("The information was recieved successfully")
-                if let decodedData = try? JSONDecoder().decode(ResultLatestDeals.self, from: myJSON!) {
-                    print("The data was successfully decoded!")
-                    var myname = decodedData.name
-                    //resultLastDeals = decodedData.name
+                if let decodedData = try? JSONDecoder().decode(LatestDealsResponce.self, from: data!) {
+                    //print("The data was successfully decoded!")
+                    resultLastDeals = decodedData.latest
                 } else {
-                    print("Invalid decoded data...")
+                    return
                 }
             } else {
                 print("Invalid data!")
+                return
             }
         }
-        task.resume()
+        taskForLatest.resume()
+    }
+    
+    func loadFlashSale() {
+        guard let url2 = URL(string:"https://run.mocky.io/v3/a9ceeb6e-416d-4352-bde6-2203416576ac") else {
+            print("Invalid URL!")
+            return
+        }
         
+        let taskForFlashSale = URLSession.shared.dataTask(with: url2) { (data, response, error) in
+            if error == nil && data != nil && data!.count > 0 {
+                if let decodedData = try? JSONDecoder().decode(FlashSaleResponce.self, from: data!) {
+                    //print("The data was successfully decoded!")
+                    resultFlashSale = decodedData.flash_sale
+                } else {
+                    print("incorrect data")
+                    return
+                }
+            } else {
+                print("Invalid data!")
+                return
+            }
+        }
+        taskForFlashSale.resume()
     }
 }
 

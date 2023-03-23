@@ -7,11 +7,24 @@
 
 import SwiftUI
 
+public var conditionsOfItemBar: [String: Bool] = ["home": false,"heart": false,"cart": false,"messages": false,"profile": false]
+
+func changeCircles(_ triggeredItem: String)
+{
+    for mykey in conditionsOfItemBar.keys
+    {
+        if mykey != triggeredItem
+        {
+            conditionsOfItemBar[mykey] = false
+        }
+    }
+}
+
 @main
 struct AdhiPradanaMarketApp: App {
     var body: some Scene {
         WindowGroup {
-            page1View()
+            SignInView()
         }
     }
 }
