@@ -13,6 +13,8 @@ struct SignInView: View {
     @State private var lastName: String = ""
     @State private var email: String = ""
     
+    @State private var showAlertMessage: Bool = false
+    
     var body: some View {
         NavigationView
         {
@@ -78,16 +80,25 @@ struct SignInView: View {
                 .padding(.horizontal, 43)
                 .padding(.top, 35)          //email
                 
-                
-                Button
-                { } label: {
+                Button{
+                    if !isValidEmail(email) {
+                        showAlertMessage = true
+                    } else {
+                        registerUser(fName: firstName, lName: lastName, email: email)
+                    }
+                } label: {
                     Text("Sign in").font(.custom("Montserrat-Bold", size: 16))
                         .foregroundColor(Color(red: 234/255, green: 234/255, blue: 234/255))
                         .frame(width: 290, height: 45)
                         .background(Color(red: 78/255, green: 85/255, blue: 215/255, opacity: 1))
                         .cornerRadius(15)
                         .padding(.top,35)
-                }.buttonStyle(PlainButtonStyle())       //sign in button
+                }.buttonStyle(PlainButtonStyle())
+                    .alert("Email is not valid", isPresented: $showAlertMessage, actions: {
+                        Button("OK", role: .cancel) {
+                            
+                        }
+                    })//sign in button
                 
                 HStack {
                     Text("Already have an account?")
@@ -139,6 +150,17 @@ struct SignInView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func registerUser(fName: String, lName: String, email: String) {
+        
     }
 }
 

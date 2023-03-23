@@ -16,18 +16,7 @@ struct ProfileView: View {
     @State private var accountName: String = "Satria Adhi Pradana"
     @State private var balance: String = "1593"
     
-    @State private var conditionsOfItemBar: [String: Bool] = ["home": false,"heart": false,"cart": false,"messages": false,"profile": false]
-    
-    func changeCircles(_ triggeredItem: String)
-    {
-        for mykey in conditionsOfItemBar.keys
-        {
-            if mykey != triggeredItem
-            {
-                conditionsOfItemBar[mykey] = false
-            }
-        }
-    }
+    @State private var currentPage : String = getCurrentPage()
     
     var body: some View {
         NavigationView
@@ -173,7 +162,6 @@ struct ProfileView: View {
                     }
                     .padding(.top, 14)
                     
-                    
                     Button {
                         
                     } label: {
@@ -318,165 +306,23 @@ struct ProfileView: View {
                         .cornerRadius(60)
                         .padding(.top, 20)
                     HStack {
-                        
-                        Button {
-                            changeCircles("home")
-                            conditionsOfItemBar["home"] = true
-                        } label : {
-                            if conditionsOfItemBar["home"] == true
-                            {
-                                ZStack
-                                {
-                                    Circle()
-                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                    Image(systemName: "homekit")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
-                                        .padding(25)
-                                }
-                            }
-                            else
-                            {
-                                ZStack
-                                {
-                                    Image(systemName: "homekit")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                        .padding(25)
-                                }
-                            }
-                        }
-                        Button {
-                            changeCircles("heart")
-                            conditionsOfItemBar["heart"] = true
-                        } label : {
-                            if conditionsOfItemBar["heart"] == true
-                            {
-                                ZStack
-                                {
-                                    Circle()
-                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                    Image(systemName: "suit.heart")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
-                                        .padding(25)
-                                }
-                            }
-                            else
-                            {
-                                ZStack
-                                {
-                                    Image(systemName: "suit.heart")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                        .padding(25)
-                                }
-                            }
-                        }
-                        
-                        Button {
-                            changeCircles("cart")
-                            conditionsOfItemBar["cart"] = true
-                        } label : {
-                            if conditionsOfItemBar["cart"] == true
-                            {
-                                ZStack
-                                {
-                                    Circle()
-                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                    Image(systemName: "cart")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
-                                        .padding(25)
-                                }
-                            }
-                            else
-                            {
-                                ZStack
-                                {
-                                    Image(systemName: "cart")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                        .padding(25)
-                                }
-                            }
-                        }
-                        
-                        Button {
-                            changeCircles("messages")
-                            conditionsOfItemBar["messages"] = true
-                        } label : {
-                            if conditionsOfItemBar["messages"] == true
-                            {
-                                ZStack
-                                {
-                                    Circle()
-                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                    Image(systemName: "message")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
-                                        .padding(25)
-                                }
-                            }
-                            else
-                            {
-                                ZStack
-                                {
-                                    Image(systemName: "message")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                        .padding(25)
-                                }
-                            }
-                        }
-                        
-                        Button {
-                            changeCircles("profile")
-                            conditionsOfItemBar["profile"] = true
-                        } label : {
-                            if conditionsOfItemBar["profile"] == true
-                            {
-                                ZStack
-                                {
-                                    Circle()
-                                        .fill(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 115/255, green: 114/255, blue: 151/255))
-                                        .padding(25)
-                                }
-                            }
-                            else
-                            {
-                                ZStack
-                                {
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .frame(width: 15, height: 15)
-                                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                        .padding(25)
-                                }
-                            }
-                        }
-                    }.padding()
+                        NavigationLink(destination: page1View(), label: {
+                            Image(systemName: "homekit")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                                .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                                .padding(25)
+                        }).navigationBarBackButtonHidden(true)
+                            CreateMenuButton(buttonName: "heart")
+                            CreateMenuButton(buttonName: "cart")
+                            CreateMenuButton(buttonName: "message")
+                            CreateSelectedInMenuButton(buttonName: "person")
+                    }
                 }
                 Spacer()
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
         }.navigationBarBackButtonHidden(true)
+        
     }
 }
 
