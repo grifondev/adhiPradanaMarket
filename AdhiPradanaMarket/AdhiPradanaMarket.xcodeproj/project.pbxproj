@@ -21,6 +21,12 @@
 		042C940929C39A73005833F7 /* Google_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 042C940729C39A73005833F7 /* Google_picture.png */; };
 		042C940C29CB0FC3005833F7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C940B29CB0FC3005833F7 /* ProfileView.swift */; };
 		042C941129CC5E47005833F7 /* page1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C941029CC5E47005833F7 /* page1View.swift */; };
+		042C942229CD18B1005833F7 /* page1Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C942129CD18B1005833F7 /* page1Model.swift */; };
+		042C942429CD18D3005833F7 /* page1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C942329CD18D3005833F7 /* page1ViewModel.swift */; };
+		042C942629CD1F17005833F7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C942529CD1F17005833F7 /* LoginViewModel.swift */; };
+		042C942829CD1F3D005833F7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C942729CD1F3D005833F7 /* LoginModel.swift */; };
+		042C942A29CD1F75005833F7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C942929CD1F75005833F7 /* SignInViewModel.swift */; };
+		042C942C29CD1FE5005833F7 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C942B29CD1FE5005833F7 /* SignInModel.swift */; };
 		04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */; };
 		04DE787029C06E1000152C4A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786F29C06E1000152C4A /* LoginView.swift */; };
 		04DE787229C06E1100152C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE787129C06E1100152C4A /* Assets.xcassets */; };
@@ -62,6 +68,12 @@
 		042C940729C39A73005833F7 /* Google_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Google_picture.png; sourceTree = "<group>"; };
 		042C940B29CB0FC3005833F7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		042C941029CC5E47005833F7 /* page1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1View.swift; sourceTree = "<group>"; };
+		042C942129CD18B1005833F7 /* page1Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1Model.swift; sourceTree = "<group>"; };
+		042C942329CD18D3005833F7 /* page1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1ViewModel.swift; sourceTree = "<group>"; };
+		042C942529CD1F17005833F7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		042C942729CD1F3D005833F7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		042C942929CD1F75005833F7 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		042C942B29CD1FE5005833F7 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		04DE786A29C06E1000152C4A /* AdhiPradanaMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdhiPradanaMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketApp.swift; sourceTree = "<group>"; };
 		04DE786F29C06E1000152C4A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -146,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				042C941029CC5E47005833F7 /* page1View.swift */,
+				042C942129CD18B1005833F7 /* page1Model.swift */,
+				042C942329CD18D3005833F7 /* page1ViewModel.swift */,
 			);
 			path = Page1;
 			sourceTree = "<group>";
@@ -215,6 +229,8 @@
 			children = (
 				04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */,
 				04DE786F29C06E1000152C4A /* LoginView.swift */,
+				042C942529CD1F17005833F7 /* LoginViewModel.swift */,
+				042C942729CD1F3D005833F7 /* LoginModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -223,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				042C940329C3551F005833F7 /* SignInView.swift */,
+				042C942929CD1F75005833F7 /* SignInViewModel.swift */,
+				042C942B29CD1FE5005833F7 /* SignInModel.swift */,
 			);
 			path = "Sign in";
 			sourceTree = "<group>";
@@ -368,8 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042C942C29CD1FE5005833F7 /* SignInModel.swift in Sources */,
 				042C940C29CB0FC3005833F7 /* ProfileView.swift in Sources */,
+				042C942429CD18D3005833F7 /* page1ViewModel.swift in Sources */,
 				04DE787029C06E1000152C4A /* LoginView.swift in Sources */,
+				042C942229CD18B1005833F7 /* page1Model.swift in Sources */,
+				042C942A29CD1F75005833F7 /* SignInViewModel.swift in Sources */,
+				042C942829CD1F3D005833F7 /* LoginModel.swift in Sources */,
+				042C942629CD1F17005833F7 /* LoginViewModel.swift in Sources */,
 				042C941129CC5E47005833F7 /* page1View.swift in Sources */,
 				04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */,
 				042C940429C3551F005833F7 /* SignInView.swift in Sources */,

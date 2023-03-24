@@ -99,12 +99,10 @@ struct LoginView: View {
                         .cornerRadius(15)
                         .padding(.top,100)
                 })
-                
-                
                 Spacer()
                 
             }
-        }
+        }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
         .navigationBarBackButtonHidden(true)
     }
 }

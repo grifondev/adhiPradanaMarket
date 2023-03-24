@@ -24,7 +24,7 @@ struct SignInView: View {
                     .font(.custom("Montserrat-SemiBold", size: 27))
                     .foregroundColor(Color(red: 22/255, green: 24/255, blue: 38/255))
                     .padding(.horizontal, 143)
-                    .padding(.top, 125)     //caption
+                    .padding(.top, 125)         //caption "Sign in"
                 
                 ZStack {
                     Rectangle()
@@ -85,6 +85,7 @@ struct SignInView: View {
                         showAlertMessage = true
                     } else {
                         registerUser(fName: firstName, lName: lastName, email: email)
+                        showAlertMessage = false
                     }
                 } label: {
                     Text("Sign in").font(.custom("Montserrat-Bold", size: 16))
@@ -95,10 +96,8 @@ struct SignInView: View {
                         .padding(.top,35)
                 }.buttonStyle(PlainButtonStyle())
                     .alert("Email is not valid", isPresented: $showAlertMessage, actions: {
-                        Button("OK", role: .cancel) {
-                            
-                        }
-                    })//sign in button
+                        Button("OK", role: .cancel) { }
+                    })                  //sign in button
                 
                 HStack {
                     Text("Already have an account?")
@@ -109,7 +108,7 @@ struct SignInView: View {
                             .font(.custom("Montserrat-Regular", size: 10))
                             .foregroundColor(Color(red: 37/255, green: 79/255, blue: 230/255))
                     }
-
+                    
                 }
                 .padding(.top, 10)
                 .padding(.trailing, 115)    //"Already have an account" + Log in button
@@ -148,19 +147,8 @@ struct SignInView: View {
                 Spacer()
                 
             }
-        }
-        .navigationBarBackButtonHidden(true)
-    }
-    
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: email)
-    }
-    
-    func registerUser(fName: String, lName: String, email: String) {
-        
+        }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
+            .navigationBarBackButtonHidden(true)
     }
 }
 

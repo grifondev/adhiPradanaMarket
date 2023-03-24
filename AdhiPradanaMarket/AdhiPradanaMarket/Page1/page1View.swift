@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-
-struct FlashSaleResponce: Codable {
-    var flash_sale: [FlashSaleItem] = Array()
-}
-
-struct FlashSaleItem : Codable {
-    var category: String
-    var name: String
-    var price: Double
-    var discount: Int
-    var image_url: String
-}
-
 struct FlashSaleView : View {
     var category: String
     var name: String
@@ -107,17 +94,6 @@ struct FlashSaleView : View {
             .padding(.leading, 10)
             .padding(.top, 7)
     }
-}
-
-struct LatestDealsResponce: Codable {
-    var latest: [LatestDealsItem] = Array()
-}
-
-struct LatestDealsItem: Codable {
-    var category: String
-    var name: String
-    var price: Int
-    var image_url: String
 }
 
 struct latestView : View {
@@ -433,7 +409,9 @@ struct page1View: View {
                     }
                     .frame(width: 350, height: 36)
                     .task {
-                        loadLatest()
+                        if resultFlashSale.isEmpty {
+                            loadLatest()
+                        }
                     }
                     if resultFlashSale.count > 0 && resultLastDeals.count > 0 {
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -466,7 +444,9 @@ struct page1View: View {
                     }
                     .frame(width: 350, height: 36)
                     .task {
-                        loadFlashSale()
+                        if resultLastDeals.isEmpty {
+                            loadFlashSale()
+                        }
                     }
                     
                     if resultFlashSale.count > 0 && resultLastDeals.count > 0 {
@@ -500,7 +480,7 @@ struct page1View: View {
                                 .padding(25)
                         }).navigationBarBackButtonHidden(true)
                     }
-                }.position(x:200, y:150)
+                }.position(x:200, y:130)
                 
                 Spacer()
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
