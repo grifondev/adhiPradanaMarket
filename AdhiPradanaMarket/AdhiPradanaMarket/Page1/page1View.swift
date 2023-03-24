@@ -409,19 +409,25 @@ struct page1View: View {
                     }
                     .frame(width: 350, height: 36)
                     .task {
-                        if flashSaleMockedData.isEmpty {
+                        if latestDealsMockedData.isEmpty {
                             loadLatestDealsFromMock()
                         }
                     }
-                    if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(latestDealsMockedData, id: \.name) { deal in
-                                    latestDealsView(category: deal.category, name: deal.name, price: deal.price, image_url: deal.image_url)
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 150, height: 115)
+                            .foregroundColor(Color(red: 250/255, green: 249/255, blue: 255/255))
+                        if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(latestDealsMockedData, id: \.name) { deal in
+                                        latestDealsView(category: deal.category, name: deal.name, price: deal.price, image_url: deal.image_url)
+                                    }
                                 }
                             }
                         }
                     }
+                    
                 }
                 
                 Group {
@@ -444,20 +450,25 @@ struct page1View: View {
                     }
                     .frame(width: 350, height: 36)
                     .task {
-                        if latestDealsMockedData.isEmpty {
+                        if flashSaleMockedData.isEmpty {
                             loadFlashSaleFromMock()
                         }
                     }
-                    
-                    if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(flashSaleMockedData, id: \.name) { deal in
-                                    FlashSaleView(category: deal.category, name: deal.name, price: deal.price, discount: deal.discount, image_url: deal.image_url)
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 220, height: 175)
+                            .foregroundColor(Color(red: 250/255, green: 249/255, blue: 255/255))
+                        if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(flashSaleMockedData, id: \.name) { deal in
+                                        FlashSaleView(category: deal.category, name: deal.name, price: deal.price, discount: deal.discount, image_url: deal.image_url)
+                                    }
                                 }
                             }
                         }
                     }
+                    
                 }
                 
                 ZStack
