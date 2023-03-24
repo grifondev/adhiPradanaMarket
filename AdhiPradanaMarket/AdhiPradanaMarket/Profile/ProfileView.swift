@@ -273,6 +273,9 @@ struct ProfileView: View {
                     .padding(.top, 14)
                     
                     NavigationLink(destination: SignInView(), label: {
+                        if logOutUser() == true {
+                            
+                        }
                         HStack
                         {
                             ZStack {

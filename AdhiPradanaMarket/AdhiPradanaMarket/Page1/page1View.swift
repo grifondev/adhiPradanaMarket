@@ -96,7 +96,7 @@ struct FlashSaleView : View {
     }
 }
 
-struct latestView : View {
+struct latestDealsView : View {
     var category: String
     var name: String
     var price: Int
@@ -173,9 +173,9 @@ struct page1View: View {
     
     @State private var searchText: String = ""
     
-    @State private var resultLastDeals = [LatestDealsItem]()
+    @State private var latestDealsMockedData = [LatestDealsItem]()
     
-    @State private var resultFlashSale = [FlashSaleItem]()
+    @State private var flashSaleMockedData = [FlashSaleItem]()
     
     var body: some View {
         NavigationView {
@@ -409,15 +409,15 @@ struct page1View: View {
                     }
                     .frame(width: 350, height: 36)
                     .task {
-                        if resultFlashSale.isEmpty {
-                            loadLatest()
+                        if flashSaleMockedData.isEmpty {
+                            loadLatestDealsFromMock()
                         }
                     }
-                    if resultFlashSale.count > 0 && resultLastDeals.count > 0 {
+                    if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(resultLastDeals, id: \.name) { deal in
-                                    latestView(category: deal.category, name: deal.name, price: deal.price, image_url: deal.image_url)
+                                ForEach(latestDealsMockedData, id: \.name) { deal in
+                                    latestDealsView(category: deal.category, name: deal.name, price: deal.price, image_url: deal.image_url)
                                 }
                             }
                         }
@@ -444,15 +444,15 @@ struct page1View: View {
                     }
                     .frame(width: 350, height: 36)
                     .task {
-                        if resultLastDeals.isEmpty {
-                            loadFlashSale()
+                        if latestDealsMockedData.isEmpty {
+                            loadFlashSaleFromMock()
                         }
                     }
                     
-                    if resultFlashSale.count > 0 && resultLastDeals.count > 0 {
+                    if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(resultFlashSale, id: \.name) { deal in
+                                ForEach(flashSaleMockedData, id: \.name) { deal in
                                     FlashSaleView(category: deal.category, name: deal.name, price: deal.price, discount: deal.discount, image_url: deal.image_url)
                                 }
                             }
@@ -487,7 +487,7 @@ struct page1View: View {
         }.navigationBarBackButtonHidden(true)
     }
     
-    func loadLatest() {
+    func loadLatestDealsFromMock() {
         guard let url = URL(string:"https://run.mocky.io/v3/cc0071a1-f06e-48fa-9e90-b1c2a61eaca7") else {
             print("Invalid URL!")
             return
@@ -495,9 +495,9 @@ struct page1View: View {
         
         let taskForLatest = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error == nil && data != nil && data!.count > 0 {
-                if let decodedData = try? JSONDecoder().decode(LatestDealsResponce.self, from: data!) {
+                if let decodedLatestDealsJSON = try? JSONDecoder().decode(LatestDealsResponce.self, from: data!) {
                     //print("The data was successfully decoded!")
-                    resultLastDeals = decodedData.latest
+                    latestDealsMockedData = decodedLatestDealsJSON.latest
                 } else {
                     return
                 }
@@ -509,7 +509,7 @@ struct page1View: View {
         taskForLatest.resume()
     }
     
-    func loadFlashSale() {
+    func loadFlashSaleFromMock() {
         guard let url2 = URL(string:"https://run.mocky.io/v3/a9ceeb6e-416d-4352-bde6-2203416576ac") else {
             print("Invalid URL!")
             return
@@ -517,9 +517,9 @@ struct page1View: View {
         
         let taskForFlashSale = URLSession.shared.dataTask(with: url2) { (data, response, error) in
             if error == nil && data != nil && data!.count > 0 {
-                if let decodedData = try? JSONDecoder().decode(FlashSaleResponce.self, from: data!) {
+                if let decodedFlashSaleJSON = try? JSONDecoder().decode(FlashSaleResponce.self, from: data!) {
                     //print("The data was successfully decoded!")
-                    resultFlashSale = decodedData.flash_sale
+                    flashSaleMockedData = decodedFlashSaleJSON.flash_sale
                 } else {
                     print("incorrect data")
                     return
