@@ -16,6 +16,10 @@ struct LoginView: View {
     @FocusState var focus2: Bool
     @State var showPassword: Bool = false
     
+    init() {
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
         NavigationView
         {

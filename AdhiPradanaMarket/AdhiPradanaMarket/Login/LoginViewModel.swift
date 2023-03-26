@@ -23,7 +23,7 @@ func CreateMenuButton(buttonName: String) -> some View {
 
 func CreateSelectedInMenuButton(buttonName: String) -> some View {
     return Button {
-        changeCircles(buttonName)
+        changeLabelOfSelectedButton(buttonName)
         conditionsOfItemBar[buttonName] = true
     } label : {
         ZStack
@@ -40,16 +40,7 @@ func CreateSelectedInMenuButton(buttonName: String) -> some View {
     }
 }
 
-func getCurrentPage() -> String {
-    for (namePage, pageCondition) in conditionsOfItemBar {
-        if pageCondition == true {
-            return namePage
-        }
-    }
-    return ""
-}
-
-func changeCircles(_ triggeredItem: String)
+func changeLabelOfSelectedButton(_ triggeredItem: String)
 {
     for mykey in conditionsOfItemBar.keys
     {

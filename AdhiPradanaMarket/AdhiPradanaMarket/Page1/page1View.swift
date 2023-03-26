@@ -177,6 +177,10 @@ struct page1View: View {
     
     @State private var flashSaleMockedData = [FlashSaleItem]()
     
+    init() {
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
         NavigationView {
             VStack {

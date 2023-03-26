@@ -15,6 +15,10 @@ struct SignInView: View {
     
     @State private var showAlertMessage: Bool = false
     
+    init() {
+        UINavigationBar.setAnimationsEnabled(false)
+    }
+    
     var body: some View {
         NavigationView
         {

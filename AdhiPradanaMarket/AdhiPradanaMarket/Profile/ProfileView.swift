@@ -16,7 +16,9 @@ struct ProfileView: View {
     @State private var accountName: String = "Satria Adhi Pradana"
     @State private var balance: String = "1593"
     
-    @State private var currentPage : String = getCurrentPage()
+    init() {
+        UINavigationBar.setAnimationsEnabled(false)
+    }
     
     var body: some View {
         NavigationView
@@ -274,7 +276,7 @@ struct ProfileView: View {
                     
                     NavigationLink(destination: SignInView(), label: {
                         if logOutUser() == true {
-                            
+                            // to be continued...
                         }
                         HStack
                         {
