@@ -7,175 +7,20 @@
 
 import SwiftUI
 
-struct FlashSaleView : View {
-    var category: String
-    var name: String
-    var price: Double
-    var discount: Int
-    var image_url: String
-    var body: some View {
-        ZStack {
-            AsyncImage(url: URL(string: image_url), content: { image in
-                image.image?
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 220, height: 175)
-                    .cornerRadius(15)
-                    .backgroundStyle(Color(red: 1, green: 1, blue: 1))
-            })
-            Text(name)
-                .font(.custom("Montserrat-SemiBold", size: 10))
-                .frame(width: 90, height: 30)
-                .foregroundColor(Color.white)
-                .padding(.top, 70)
-                .padding(.trailing, 130)
-                .multilineTextAlignment(.leading)
-            ZStack
-            {
-                Rectangle()
-                    .frame(width: 50, height: 18)
-                    .foregroundColor(Color(red: 196/255, green: 196/255, blue: 196/255))
-                    .cornerRadius(60)
-                    .opacity(0.85)
-                    .padding(.top, 10)
-                    .padding(.trailing, 120)
-                Text(category)
-                    .font(.custom("Montserrat-SemiBold", size: 8))
-                    .frame(width: 20, height: 5)
-                    .foregroundColor(Color(red: 7/255, green: 6/255, blue: 4/255))
-                    .padding(.top, 10)
-                    .padding(.trailing, 115)
-                    .multilineTextAlignment(.center)
-            }
-            .padding(.trailing, 30)
-            .padding(.horizontal, 5)
-            
-            Text("$ " + String(price) + "0")
-                .padding(.top, 130)
-                .padding(.trailing, 170)
-                .font(.custom("Montserrat-SemiBold", size: 10))
-                .foregroundColor(Color.white)
-                .multilineTextAlignment(.leading)
-            
-            Circle()
-                .frame(width: 35, height: 35)
-                .foregroundColor(Color(red: 229/255, green: 233/255, blue: 239, opacity: 0.85))
-                .padding(.top, 120)
-                .padding(.leading, 165)
-            
-            Rectangle()
-                .frame(width: 14, height: 1)
-                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
-                .padding(.leading, 164)
-                .padding(.top, 120)
-            
-            Rectangle()
-                .frame(width: 1, height: 14)
-                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
-                .padding(.leading, 164)
-                .padding(.top, 120)
-            
-            ZStack {
-                Rectangle()
-                    .foregroundColor(Color(red: 249/255, green: 58/255, blue: 58/255))
-                    .frame(width: 50, height: 18)
-                    .cornerRadius(60)
-                    .padding(.leading, 140)
-                    .padding(.bottom, 130)
-                Text(String(discount) + "% off")
-                    .foregroundColor(Color .white)
-                    .font(.custom("Montserrat-Regular", size: 10))
-                    .padding(.leading, 140)
-                    .padding(.bottom, 130)
-            }
-                
-        }
-            .frame(width: 220, height: 175)
-            .padding(.leading, 10)
-            .padding(.top, 7)
-    }
-}
-
-struct latestDealsView : View {
-    var category: String
-    var name: String
-    var price: Int
-    var image_url: String
-    var body: some View {
-        ZStack {
-            AsyncImage(url: URL(string: image_url), content: { image in
-                image.image?
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 115)
-                    .cornerRadius(10)
-            })
-            Text(name)
-                .font(.custom("Montserrat-SemiBold", size: 10))
-                .frame(width: 80, height: 22)
-                .foregroundColor(Color.white)
-                .padding(.top, 40)
-                .padding(.trailing, 75)
-                .multilineTextAlignment(.leading)
-            ZStack
-            {
-                Rectangle()
-                    .frame(width: 35, height: 12)
-                    .foregroundColor(Color(red: 196/255, green: 196/255, blue: 196/255))
-                    .cornerRadius(60)
-                    .opacity(0.85)
-                    .padding(.top, 10)
-                    .padding(.trailing, 70)
-                Text(category)
-                    .font(.custom("Montserrat-SemiBold", size: 5))
-                    .frame(width: 20, height: 5)
-                    .foregroundColor(Color(red: 7/255, green: 6/255, blue: 4/255))
-                    .padding(.top, 10)
-                    .padding(.trailing, 68)
-                    .multilineTextAlignment(.center)
-            }
-            .padding(.trailing, 30)
-            
-            Text("$ " + String(price) + ",000")
-                .padding(.top, 90)
-                .padding(.trailing, 90)
-                .font(.custom("Montserrat-SemiBold", size: 10))
-                .foregroundColor(Color.white)
-                .multilineTextAlignment(.leading)
-            
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(Color(red: 229/255, green: 233/255, blue: 239, opacity: 0.85))
-                .padding(.top, 80)
-                .padding(.leading, 120)
-            
-            Rectangle()
-                .frame(width: 7, height: 1)
-                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
-                .padding(.leading, 120)
-                .padding(.top, 80)
-            
-            Rectangle()
-                .frame(width: 1, height: 7)
-                .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
-                .padding(.leading, 120)
-                .padding(.top, 80)
-                
-        }
-            .frame(width: 150, height: 115)
-            .padding(.leading, 10)
-            .padding(.top, 7)
-    }
+extension UIScreen {
+    public static let screenWidth = UIScreen.main.bounds.size.width
+    public static let screenHeight = UIScreen.main.bounds.size.height
 }
 
 struct page1View: View {
-    //@State private var currentLocation: String = "Russia"
     
-    @State private var searchText: String = ""
+    @State private var searchText: String = "What are you looking for ?"
     
     @State private var latestDealsMockedData = [LatestDealsItem]()
     
     @State private var flashSaleMockedData = [FlashSaleItem]()
+    
+    @State public var yForBottomBar: Int = 60
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
@@ -204,16 +49,16 @@ struct page1View: View {
                             .resizable()
                             .frame(width: 30, height: 30)
                             .clipShape(Circle())
-                            .padding(.leading, 48)
+                            .padding(.leading, 52)
                     }
                 }
-                .padding(.top, 21)
+                .padding(.top, 10)
                 .frame(width: 315)
                 .padding(.trailing, 15)
                 HStack {
                     Text("Location")
-                        .frame(width: 40, height: 8)
-                        .font(.custom("Montserrat-Regular", size: 8))
+                        .frame(width: 40, height: 9)
+                        .font(.custom("Montserrat-Regular", size: 9))
                         .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255, opacity: 1))
                         .padding(.top, 15)
                     Image(systemName: "chevron.down")
@@ -227,14 +72,13 @@ struct page1View: View {
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: 260,height: 30)
+                        .frame(width: UIScreen.screenWidth*0.7,height: 25)
                         .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
                         .cornerRadius(60)
                     
-                    TextField("What are you looking for?", text: $searchText)
+                    TextField("What are you looking for ?", text: $searchText)
+                        .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
                         .font(.custom("Montserrat-Regular", size: 10))
-                        .foregroundColor(Color(red: 6/255, green: 4/255, blue: 4/255))
-                        .textContentType(.password)
                         .multilineTextAlignment(.center)
                         .frame(width: 290, height: 30)
                         .cornerRadius(60)
@@ -243,9 +87,10 @@ struct page1View: View {
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
                         .frame(width: 30,height: 30)
-                        .opacity(0.7)
+                        //.opacity(0.7)
                         .padding(.leading, 210)
-                }.padding(.top, 10)
+                }
+                //.padding(.top, 1)
                 
                 HStack {
                     Button {
@@ -392,19 +237,21 @@ struct page1View: View {
                         }
                     }.padding(.horizontal, 5)
                 }
-                    .padding(.top, 14)
+                    .padding(.top, 12)
                 Group {
                     HStack {
                         Text("Latest deals")
                             .font(.custom("Montserrat-SemiBold", size: 16))
-                            .padding(.top, 36)
+                            .padding(.top, 38)
                             .padding(.leading, -10)
+                        
                         Spacer()
+                        
                         Button {
                             
                         } label: {
                             Text("View all")
-                                .font(.custom("Montserrat-Regular", size: 8))
+                                .font(.custom("Montserrat-Regular", size: 9))
                                 .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
                                 .padding(.trailing, 0)
                                 .padding(.top, 34)
@@ -418,9 +265,6 @@ struct page1View: View {
                         }
                     }
                     ZStack {
-                        Rectangle()
-                            .frame(width: 150, height: 115)
-                            .foregroundColor(Color(red: 250/255, green: 249/255, blue: 255/255))
                         if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
@@ -436,32 +280,28 @@ struct page1View: View {
                 
                 Group {
                     HStack {
-                        Text("Flash sale")
+                        Text("Flash Sale")
                             .font(.custom("Montserrat-SemiBold", size: 16))
-                            .padding(.top, 36)
-                            .padding(.leading, -10)
+                            .padding(.leading, 12)
                         Spacer()
                         Button {
                             
                         } label: {
                             Text("View all")
-                                .font(.custom("Montserrat-Regular", size: 8))
+                                .font(.custom("Montserrat-Regular", size: 9))
                                 .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
-                                .padding(.trailing, 0)
-                                .padding(.top, 34)
+                                .padding(.trailing, 20)
                         }
                         
                     }
-                    .frame(width: 350, height: 36)
+                    .frame(width: UIScreen.screenWidth, height: 36)
+                    .padding(.top, 5)
                     .task {
                         if flashSaleMockedData.isEmpty {
                             loadFlashSaleFromMock()
                         }
                     }
                     ZStack {
-                        Rectangle()
-                            .frame(width: 220, height: 175)
-                            .foregroundColor(Color(red: 250/255, green: 249/255, blue: 255/255))
                         if flashSaleMockedData.count > 0 && latestDealsMockedData.count > 0 {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
@@ -475,29 +315,14 @@ struct page1View: View {
                     
                 }
                 
-                ZStack
-                {
-                    Rectangle()
-                        .fill(Color(red: 1, green: 1, blue: 1))
-                        .frame(width: UIScreen.main.bounds.width, height: 100)
-                        .cornerRadius(60)
-                        .padding(.top, 20)
-                    HStack {
-                        CreateSelectedInMenuButton(buttonName: "homekit")
-                            CreateMenuButton(buttonName: "heart")
-                            CreateMenuButton(buttonName: "cart")
-                            CreateMenuButton(buttonName: "message")
-                        NavigationLink(destination: ProfileView(), label: {
-                            Image(systemName: "person")
-                                .resizable()
-                                .frame(width: 15, height: 15)
-                                .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                .padding(25)
-                        }).navigationBarBackButtonHidden(true)
-                    }
-                }.position(x:200, y:130)
-                
                 Spacer()
+                    .task {
+                        setYForBottomBar(count1: flashSaleMockedData.count, count2:latestDealsMockedData.count)
+                    }
+                
+                drawBottomTabBar()
+                    .position(x: UIScreen.screenWidth/2, y: CGFloat(yForBottomBar))
+                
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
         }.navigationBarBackButtonHidden(true)
     }
@@ -551,5 +376,169 @@ struct page1View: View {
 struct page1View_Previews: PreviewProvider {
     static var previews: some View {
         page1View()
+    }
+}
+
+struct latestDealsView : View {
+    var category: String
+    var name: String
+    var price: Int
+    var image_url: String
+    var body: some View {
+        ZStack {
+            AsyncImage(url: URL(string: image_url), content: { image in
+                image.image?
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.screenWidth*0.3, height: UIScreen.screenHeight*0.18)
+                    .cornerRadius(10)
+            })
+            Text(name)
+                .font(.custom("Montserrat-SemiBold", size: 10))
+                .frame(width: 80, height: 22)
+                .foregroundColor(Color.white)
+                .padding(.top, 70)
+                .padding(.trailing, 40)
+                .multilineTextAlignment(.leading)
+            ZStack
+            {
+                Rectangle()
+                    .frame(width: 35, height: 12)
+                    .foregroundColor(Color(red: 196/255, green: 196/255, blue: 196/255))
+                    .cornerRadius(4)
+                    .opacity(0.85)
+                    .padding(.trailing, 68)
+                Text(category)
+                    .font(.custom("Montserrat-SemiBold", size: 5))
+                    .frame(width: 20, height: 5)
+                    .foregroundColor(Color(red: 7/255, green: 6/255, blue: 4/255))
+                    .padding(.trailing, 68)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.trailing, 5)
+            .padding(.top, 35)
+            
+            Text("$ " + String(price) + ",000")
+                .padding(.top, 120)
+                .padding(.trailing, 70)
+                .font(.custom("Montserrat-SemiBold", size: 7))
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.leading)
+            
+            Group {
+                Circle()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color(red: 229/255, green: 233/255, blue: 239, opacity: 0.85))
+                
+                Rectangle()
+                    .frame(width: 7, height: 1)
+                    .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                
+                Rectangle()
+                    .frame(width: 1, height: 7)
+                    .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+            }
+            .padding(.top, 120)
+            .padding(.leading, 90)
+        }
+        .frame(width: UIScreen.screenWidth*0.3, height: UIScreen.screenHeight*0.18)
+            .padding(.leading, 7)
+            .padding(.top, 7)
+    }
+}
+
+
+struct FlashSaleView : View {
+    var category: String
+    var name: String
+    var price: Double
+    var discount: Int
+    var image_url: String
+    var body: some View {
+        ZStack {
+            AsyncImage(url: URL(string: image_url), content: { image in
+                image.image?
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.screenWidth*0.48, height: UIScreen.screenHeight*0.28)
+                    .cornerRadius(15)
+                    .backgroundStyle(Color(red: 1, green: 1, blue: 1))
+            })
+            Text(name)
+                .font(.custom("Montserrat-Bold", size: 13))
+                .foregroundColor(Color.white)
+                .padding(.top, 100)
+                .padding(.trailing, 75)
+                .multilineTextAlignment(.leading)
+                .lineSpacing(8)
+            ZStack
+            {
+                Rectangle()
+                    .frame(width: 50, height: 18)
+                    .foregroundColor(Color(red: 196/255, green: 196/255, blue: 196/255))
+                    .cornerRadius(8)
+                    .opacity(0.85)
+                    .padding(.top, 10)
+                    .padding(.trailing, 120)
+                Text(category)
+                    .font(.custom("Montserrat-SemiBold", size: 8))
+                    .frame(width: 20, height: 5)
+                    .foregroundColor(Color(red: 7/255, green: 6/255, blue: 4/255))
+                    .padding(.top, 10)
+                    .padding(.trailing, 115)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(.trailing, 0)
+            .padding(.top, 10)
+            
+            Text("$ " + String(price) + "0")
+                .padding(.top, 190)
+                .padding(.trailing, 130)
+                .font(.custom("Montserrat-SemiBold", size: 10))
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.leading)
+            
+            Group {
+                Circle()
+                    .frame(width: 35, height: 35)
+                    .foregroundColor(Color(red: 229/255, green: 233/255, blue: 239, opacity: 1))
+                
+                Rectangle()
+                    .frame(width: 14, height: 1)
+                    .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                
+                Rectangle()
+                    .frame(width: 1, height: 14)
+                    .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+            }
+            .padding(.leading, 140)
+            .padding(.top, 190)
+            
+            Group {
+                Circle()
+                    .frame(width: 28, height: 28)
+                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244))
+                Image(systemName: "suit.heart")
+                    .foregroundColor(Color(red: 84/255, green: 85/255, blue: 137/255))
+                    .font(.custom("", size: 12))
+            }
+            .padding(.top, 190)
+            .padding(.leading, 65)
+                        
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(red: 249/255, green: 58/255, blue: 58/255))
+                    .frame(width: 50, height: 18)
+                    .cornerRadius(60)
+                Text(String(discount) + "% off")
+                    .foregroundColor(Color .white)
+                    .font(.custom("Montserrat-SemiBold", size: 9))
+            }
+            .padding(.leading, 110)
+            .padding(.bottom, 200)
+                
+        }
+        .frame(width: UIScreen.screenWidth*0.48, height: UIScreen.screenHeight*0.28)
+        .padding(.leading, 6)
     }
 }
