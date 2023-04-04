@@ -29,11 +29,3 @@ func drawBottomTabBar() -> some View {
         }
     }
 }
-
-func setYForBottomBar(count1: Int, count2: Int) {
-    if count1 > 0 && count2 > 0 {
-        page1View.init().yForBottomBar = 60
-    } else {
-        page1View.init().yForBottomBar = 480
-    }
-}

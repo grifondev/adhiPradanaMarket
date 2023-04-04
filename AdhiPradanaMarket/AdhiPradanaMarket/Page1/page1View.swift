@@ -20,7 +20,7 @@ struct page1View: View {
     
     @State private var flashSaleMockedData = [FlashSaleItem]()
     
-    @State public var yForBottomBar: Int = 60
+    @State public var yForBottomBar: Int = 0
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
@@ -316,12 +316,9 @@ struct page1View: View {
                 }
                 
                 Spacer()
-                    .task {
-                        setYForBottomBar(count1: flashSaleMockedData.count, count2:latestDealsMockedData.count)
-                    }
                 
                 drawBottomTabBar()
-                    .position(x: UIScreen.screenWidth/2, y: CGFloat(yForBottomBar))
+                    .padding(.bottom, -50)
                 
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
         }.navigationBarBackButtonHidden(true)
