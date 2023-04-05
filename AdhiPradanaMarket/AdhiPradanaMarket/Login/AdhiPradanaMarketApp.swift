@@ -11,7 +11,7 @@ import SwiftUI
 struct AdhiPradanaMarketApp: App {
     var body: some Scene {
         WindowGroup {
-            page1View()
+            SignInView()
         }
     }
 }

@@ -303,27 +303,8 @@ struct ProfileView: View {
                     
                 }
                 
-                ZStack
-                {
-                    Rectangle()
-                        .fill(Color(red: 1, green: 1, blue: 1))
-                        .frame(width: UIScreen.main.bounds.width, height: 80)
-                        .cornerRadius(60)
-                        .padding(.top, 20)
-                    HStack {
-                        NavigationLink(destination: page1View(), label: {
-                            Image(systemName: "homekit")
-                                .resizable()
-                                .frame(width: 15, height: 15)
-                                .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-                                .padding(25)
-                        }).navigationBarBackButtonHidden(true)
-                            CreateMenuButton(buttonName: "heart")
-                            CreateMenuButton(buttonName: "cart")
-                            CreateMenuButton(buttonName: "message")
-                            CreateSelectedInMenuButton(buttonName: "person")
-                    }
-                }
+                drawBottomTabBarProfile()
+                    .padding(.bottom, -20)
                 Spacer()
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
         }.navigationBarBackButtonHidden(true)

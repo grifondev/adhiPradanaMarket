@@ -105,9 +105,12 @@ struct LoginView: View {
                 })
                 Spacer()
                 
-            }
-        }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
+            }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
+        }
         .navigationBarBackButtonHidden(true)
+        .onTapGesture(perform: {
+            endEditing()
+        })
     }
 }
 

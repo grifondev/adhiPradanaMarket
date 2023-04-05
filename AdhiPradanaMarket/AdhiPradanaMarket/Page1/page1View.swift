@@ -20,8 +20,6 @@ struct page1View: View {
     
     @State private var flashSaleMockedData = [FlashSaleItem]()
     
-    @State public var yForBottomBar: Int = 0
-    
     init() {
         UINavigationBar.setAnimationsEnabled(false)
     }
@@ -317,11 +315,16 @@ struct page1View: View {
                 
                 Spacer()
                 
-                drawBottomTabBar()
+                drawBottomTabBarPage1()
                     .padding(.bottom, -50)
                 
-            }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
-        }.navigationBarBackButtonHidden(true)
+            }
+            .background(Color(red: 250/255, green: 249/255, blue: 255/255))
+        }
+        .navigationBarBackButtonHidden(true)
+        .onTapGesture(perform: {
+            endEditing()
+        })
     }
     
     func loadLatestDealsFromMock() {
@@ -333,7 +336,6 @@ struct page1View: View {
         let taskForLatest = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error == nil && data != nil && data!.count > 0 {
                 if let decodedLatestDealsJSON = try? JSONDecoder().decode(LatestDealsResponce.self, from: data!) {
-                    //print("The data was successfully decoded!")
                     latestDealsMockedData = decodedLatestDealsJSON.latest
                 } else {
                     return
@@ -355,7 +357,6 @@ struct page1View: View {
         let taskForFlashSale = URLSession.shared.dataTask(with: url2) { (data, response, error) in
             if error == nil && data != nil && data!.count > 0 {
                 if let decodedFlashSaleJSON = try? JSONDecoder().decode(FlashSaleResponce.self, from: data!) {
-                    //print("The data was successfully decoded!")
                     flashSaleMockedData = decodedFlashSaleJSON.flash_sale
                 } else {
                     print("incorrect data")

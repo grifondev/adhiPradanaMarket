@@ -28,7 +28,7 @@ struct SignInView: View {
                     .font(.custom("Montserrat-SemiBold", size: 27))
                     .foregroundColor(Color(red: 22/255, green: 24/255, blue: 38/255))
                     .padding(.horizontal, 143)
-                    .padding(.top, 125)         //caption "Sign in"
+                    .padding(.top, 100)         //caption "Sign in"
                 
                 ZStack {
                     Rectangle()
@@ -46,7 +46,7 @@ struct SignInView: View {
                     
                 }
                 .padding(.horizontal, 43)
-                .padding(.top, 78)          //first name
+                .padding(.top, 60)          //first name
                 
                 ZStack {
                     Rectangle()
@@ -64,7 +64,7 @@ struct SignInView: View {
                     
                 }
                 .padding(.horizontal, 43)
-                .padding(.top, 35)          //Last name
+                .padding(.top, 30)          //Last name
                 
                 ZStack {
                     Rectangle()
@@ -82,7 +82,7 @@ struct SignInView: View {
                     
                 }
                 .padding(.horizontal, 43)
-                .padding(.top, 35)          //email
+                .padding(.top, 30)          //email
                 
                 Button{
                     if !isValidEmail(email) {
@@ -97,7 +97,7 @@ struct SignInView: View {
                         .frame(width: 290, height: 45)
                         .background(Color(red: 78/255, green: 85/255, blue: 215/255, opacity: 1))
                         .cornerRadius(15)
-                        .padding(.top,35)
+                        .padding(.top,30)
                 }.buttonStyle(PlainButtonStyle())
                     .alert("Email is not valid", isPresented: $showAlertMessage, actions: {
                         Button("OK", role: .cancel) { }
@@ -129,7 +129,7 @@ struct SignInView: View {
                         .font(.custom("Montserrat-Regular", size: 12))
                         .foregroundColor(Color(red: 0, green: 0, blue: 0))
                 }
-                .padding(.top, 74)
+                .padding(.top, 70)
                 .padding(.trailing, 128)
                 .padding(.leading, 100)         //Sign in with google
                 
@@ -144,15 +144,19 @@ struct SignInView: View {
                         .font(.custom("Montserrat-Regular", size: 12))
                         .foregroundColor(Color(red: 0, green: 0, blue: 0))
                 }
-                .padding(.top, 38)
+                .padding(.top, 30)
                 .padding(.trailing, 128)
                 .padding(.leading, 100)     //Sign in with Apple
                 
                 Spacer()
                 
             }
-        }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
-            .navigationBarBackButtonHidden(true)
+            .background(Color(red: 250/255, green: 249/255, blue: 255/255))
+        }
+        .navigationBarBackButtonHidden(true)
+        .onTapGesture(perform: {
+            endEditing()
+        })
     }
 }
 
