@@ -57,6 +57,4 @@ public class User {
         }
     }
     
-}
-
-var newUser: User = User(password: "1", email: "1@1.ru", firstName: "1", lastName: "1")
+}       //structure of user data

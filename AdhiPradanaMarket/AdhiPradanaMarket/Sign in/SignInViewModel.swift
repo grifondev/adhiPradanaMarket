@@ -12,13 +12,13 @@ func isValidEmail(_ email: String) -> Bool {
 
     let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
     return emailPred.evaluate(with: email)
-}
+}       //validates inputed email
 
 func isFieldsHaveValidData(first: String, last: String) -> Bool {
     if first.isEmpty { return false }
     if last.isEmpty { return false }
     return true
-}
+}       //checks that fields are not empty
 
 func saveInsertedData(email: String, firstName: String, lastName: String) -> String {
     if !isValidEmail(email) { return "Invalid email" }
@@ -27,4 +27,4 @@ func saveInsertedData(email: String, firstName: String, lastName: String) -> Str
     newUser.lastName = lastName
     newUser.email = email
     return "OK"
-}
+}       //saves data if its valid

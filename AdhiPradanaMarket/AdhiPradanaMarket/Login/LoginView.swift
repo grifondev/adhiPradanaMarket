@@ -33,7 +33,7 @@ struct LoginView: View {
                     .font(.custom("Montserrat-SemiBold", size: 27))
                     .foregroundColor(Color(red: 22/255, green: 24/255, blue: 38/255))
                     .padding(.horizontal, 90)
-                    .padding(.top, 120)
+                    .padding(.top, 120)         //"welcome back" caption
                 
                 ZStack {
                     Rectangle()
@@ -48,7 +48,7 @@ struct LoginView: View {
                 .frame(width: UIScreen.screenWidth*0.77, height: UIScreen.screenHeight*0.036)
                 .cornerRadius(60)
                 .padding(.horizontal, 43)
-                .padding(.top, 60)
+                .padding(.top, 60)      //First name field
                 
                 ZStack {
                     Rectangle()
@@ -89,7 +89,7 @@ struct LoginView: View {
                     
                 }
                 .padding(.horizontal, 43)
-                .padding(.top, 35)
+                .padding(.top, 35)          //password field
                 
                 Button {
                     switch checkDataForValid(firstName: firstName, password: password) {
@@ -117,7 +117,7 @@ struct LoginView: View {
                 })
                 .navigationDestination(isPresented: $isDataValid, destination: {
                     page1View()
-                })
+                })          //login button
                 
                 Spacer()
                 

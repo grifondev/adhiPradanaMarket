@@ -117,7 +117,7 @@ struct SignInView: View {
                 })
                 .navigationDestination(isPresented: $showYouHaveRegistered, destination: {
                     page1View()
-                })
+                })      //sign in button
 
                 HStack {
                     Text("Already have an account?")
@@ -172,7 +172,7 @@ struct SignInView: View {
         .navigationBarBackButtonHidden(true)
         .onTapGesture(perform: {
             endEditing()
-        })
+        })      //for close keyboard
     }
 }
 

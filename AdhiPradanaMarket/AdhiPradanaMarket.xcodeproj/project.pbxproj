@@ -28,6 +28,7 @@
 		04C85A1229DC261D00984E58 /* AdhiPradanaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C85A1129DC261D00984E58 /* AdhiPradanaViewModel.swift */; };
 		04C85A1429DC26EE00984E58 /* page1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C85A1329DC26EE00984E58 /* page1ViewModel.swift */; };
 		04C85A1729DDC7EB00984E58 /* AdhiPradanaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C85A1629DDC7EB00984E58 /* AdhiPradanaModel.swift */; };
+		04C85A1929DF347800984E58 /* AdhiPradanaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C85A1829DF347800984E58 /* AdhiPradanaView.swift */; };
 		04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */; };
 		04DE787029C06E1000152C4A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE786F29C06E1000152C4A /* LoginView.swift */; };
 		04DE787229C06E1100152C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DE787129C06E1100152C4A /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		04C85A1129DC261D00984E58 /* AdhiPradanaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaViewModel.swift; sourceTree = "<group>"; };
 		04C85A1329DC26EE00984E58 /* page1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = page1ViewModel.swift; sourceTree = "<group>"; };
 		04C85A1629DDC7EB00984E58 /* AdhiPradanaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaModel.swift; sourceTree = "<group>"; };
+		04C85A1829DF347800984E58 /* AdhiPradanaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaView.swift; sourceTree = "<group>"; };
 		04DE786A29C06E1000152C4A /* AdhiPradanaMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdhiPradanaMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhiPradanaMarketApp.swift; sourceTree = "<group>"; };
 		04DE786F29C06E1000152C4A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				04DE786D29C06E1000152C4A /* AdhiPradanaMarketApp.swift */,
 				04C85A1129DC261D00984E58 /* AdhiPradanaViewModel.swift */,
 				04C85A1629DDC7EB00984E58 /* AdhiPradanaModel.swift */,
+				04C85A1829DF347800984E58 /* AdhiPradanaView.swift */,
 			);
 			path = AdhiPradana;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				04C85A1429DC26EE00984E58 /* page1ViewModel.swift in Sources */,
 				04DE786E29C06E1000152C4A /* AdhiPradanaMarketApp.swift in Sources */,
 				042C940429C3551F005833F7 /* SignInView.swift in Sources */,
+				04C85A1929DF347800984E58 /* AdhiPradanaView.swift in Sources */,
 				04C85A1729DDC7EB00984E58 /* AdhiPradanaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

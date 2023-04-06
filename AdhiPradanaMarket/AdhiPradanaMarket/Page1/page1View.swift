@@ -9,11 +9,11 @@ import SwiftUI
 
 struct page1View: View {
     
-    @State private var searchText: String = "What are you looking for ?"
+    @State private var searchText: String = ""
     
-    @State private var latestDealsMockedData = [LatestDealsItem]()
+    @State private var latestDealsMockedData = getLatestDealsItems()
     
-    @State private var flashSaleMockedData = [FlashSaleItem]()
+    @State private var flashSaleMockedData = getFlashSaleItems()
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
@@ -47,7 +47,7 @@ struct page1View: View {
                 }
                 .padding(.top, 10)
                 .frame(width: 315)
-                .padding(.trailing, 15)
+                .padding(.trailing, 15)     //top bar left menu + "Trade by bata" caption + avatar image
                 
                 HStack {
                     Text("Location")
@@ -59,7 +59,7 @@ struct page1View: View {
                         .frame(width: 6, height: 3)
                         .padding(.leading, -5)
                 }
-                .padding(.leading, 285)
+                .padding(.leading, 285)     //location with chevron
                 
                 ZStack {
                     Rectangle()
@@ -76,10 +76,10 @@ struct page1View: View {
                         .frame(width: 30,height: 30)
                         .padding(.leading, 210)
                 }
-                .cornerRadius(60)
+                .cornerRadius(60)       // search field
                 
                 createCategories()
-                    .padding(.top, 12)
+                    .padding(.top, 12)      //draw categories
                 
                 Group {
                     HStack {
@@ -98,12 +98,13 @@ struct page1View: View {
                                 .padding(.trailing, 20)
                         }
                         
-                    }
+                    }       //"Latest deals" + "view all"
                     .padding(.top, 38)
                     .frame(width: UIScreen.screenWidth, height: 36)
                     .task {
                         if latestDealsMockedData.isEmpty {
-                            loadLatestDealsFromMock()
+                            //latestDealsMockedData = getLatestDealsItems()
+                            //if there is no data in latestDeals it is trying to load it from mock
                         }
                     }
                     ZStack {
@@ -112,13 +113,13 @@ struct page1View: View {
                                 HStack {
                                     ForEach(latestDealsMockedData, id: \.name) { deal in
                                         latestDealsView(category: deal.category, name: deal.name, price: deal.price, image_url: deal.image_url)
-                                    }
+                                    }       //displays data if it is data in flash sale and latest deals
                                 }
                             }
                         }
                     }
                     
-                }
+                }     //draws latest details
                 
                 Group {
                     HStack {
@@ -135,12 +136,13 @@ struct page1View: View {
                                 .padding(.trailing, 20)
                         }
                         
-                    }
+                    }       //"Flash sale" + "view all" only text
                     .frame(width: UIScreen.screenWidth, height: 36)
                     .padding(.top, 5)
                     .task {
                         if flashSaleMockedData.isEmpty {
-                            loadFlashSaleFromMock()
+                            //flashSaleMockedData = getFlashSaleItems()
+                            //if there is no data in flashSale it is trying to load it from mock
                         }
                     }
                     ZStack {
@@ -149,7 +151,7 @@ struct page1View: View {
                                 HStack {
                                     ForEach(flashSaleMockedData, id: \.name) { deal in
                                         FlashSaleView(category: deal.category, name: deal.name, price: deal.price, discount: deal.discount, image_url: deal.image_url)
-                                    }
+                                    }       //displays data if it is data in flash sale and latest deals
                                 }
                             }
                         }
@@ -159,7 +161,7 @@ struct page1View: View {
                 
                 Spacer()
                 
-                drawBottomTabBarPage1()
+                drawBottomTabBarPage1()     //draws bottom bar
                     .padding(.bottom, -50)
                 
             }
@@ -168,50 +170,7 @@ struct page1View: View {
         .navigationBarBackButtonHidden(true)
         .onTapGesture(perform: {
             endEditing()
-        })
-    }
-    
-    func loadLatestDealsFromMock() {
-        guard let url = URL(string:"https://run.mocky.io/v3/cc0071a1-f06e-48fa-9e90-b1c2a61eaca7") else {
-            print("Invalid URL!")
-            return
-        }
-        
-        let taskForLatest = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error == nil && data != nil && data!.count > 0 {
-                if let decodedLatestDealsJSON = try? JSONDecoder().decode(LatestDealsResponce.self, from: data!) {
-                    latestDealsMockedData = decodedLatestDealsJSON.latest
-                } else {
-                    return
-                }
-            } else {
-                print("Invalid data!")
-                return
-            }
-        }
-        taskForLatest.resume()
-    }
-    
-    func loadFlashSaleFromMock() {
-        guard let url2 = URL(string:"https://run.mocky.io/v3/a9ceeb6e-416d-4352-bde6-2203416576ac") else {
-            print("Invalid URL!")
-            return
-        }
-        
-        let taskForFlashSale = URLSession.shared.dataTask(with: url2) { (data, response, error) in
-            if error == nil && data != nil && data!.count > 0 {
-                if let decodedFlashSaleJSON = try? JSONDecoder().decode(FlashSaleResponce.self, from: data!) {
-                    flashSaleMockedData = decodedFlashSaleJSON.flash_sale
-                } else {
-                    print("incorrect data")
-                    return
-                }
-            } else {
-                print("Invalid data!")
-                return
-            }
-        }
-        taskForFlashSale.resume()
+        })      //keyboard exit when tap on empty space
     }
 }
 
@@ -281,7 +240,7 @@ struct latestDealsView : View {
             .padding(.leading, 7)
             .padding(.top, 7)
     }
-}
+}       //creates one latest deals element
 
 struct FlashSaleView : View {
     var category: String
@@ -376,7 +335,68 @@ struct FlashSaleView : View {
         .frame(width: UIScreen.screenWidth*0.48, height: UIScreen.screenHeight*0.28)
         .padding(.leading, 6)
     }
-}
+}           //creates one flash sale element
+
+func drawBottomTabBarPage1() -> some View {
+    return ZStack {
+        Rectangle()
+            .fill(Color(red: 1, green: 1, blue: 1))
+            .frame(width: UIScreen.main.bounds.width, height: 100)
+            .cornerRadius(30)
+        HStack {
+            CreateSelectedInMenuButton(buttonName: "homekit")
+                CreateMenuButton(buttonName: "heart")
+                CreateMenuButton(buttonName: "cart")
+                CreateMenuButton(buttonName: "message")
+            NavigationLink(destination: ProfileView(), label: {
+                Image(systemName: "person")
+                    .resizable()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+            }).navigationBarBackButtonHidden(true)
+                .padding(.horizontal, 25)
+                .padding(.bottom, 30)
+        }
+    }
+}       //draws bottom bar
+
+func createCategories() -> some View {
+    return HStack {
+        createCategory(text: "Phones", image: "phone_page1")
+        createCategory(text: "Headphones", image: "headphones_page1")
+        createCategory(text: "Games", image: "games_page1")
+        createCategory(text: "Cars", image: "car_page1")
+        createCategory(text: "Furniture", image: "furniture_page1")
+        createCategory(text: "Kids", image: "kids_page1")
+    }
+}       //creates categories
+
+func createCategory(text: String, image: String) -> some View {
+    return Button {
+        
+    } label: {
+        
+        VStack
+        {
+            ZStack {
+                
+                Circle()
+                    .frame(width: 42, height: 38)
+                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
+                Image(image)
+                    .resizable()
+                    .frame(width: 21, height: 17)
+            }
+            
+            Text(text)
+                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
+                .font(.custom("Montserrat-Regular", size: 8))
+                .frame(alignment: .center)
+                .padding(.top, 3)
+        }
+    }.padding(.horizontal, 5)
+}           //creates one category
+
 
 struct page1View_Previews: PreviewProvider {
     static var previews: some View {
