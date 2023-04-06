@@ -83,3 +83,40 @@ func drawBottomTabBarPage1() -> some View {
         }
     }
 }
+
+func createCategories() -> some View {
+    return HStack {
+        createCategory(text: "Phones", image: "phone_page1")
+        createCategory(text: "Headphones", image: "headphones_page1")
+        createCategory(text: "Games", image: "games_page1")
+        createCategory(text: "Cars", image: "car_page1")
+        createCategory(text: "Furniture", image: "furniture_page1")
+        createCategory(text: "Kids", image: "kids_page1")
+    }
+}
+
+func createCategory(text: String, image: String) -> some View {
+    return Button {
+        
+    } label: {
+        
+        VStack
+        {
+            ZStack {
+                
+                Circle()
+                    .frame(width: 42, height: 38)
+                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
+                Image(image)
+                    .resizable()
+                    .frame(width: 21, height: 17)
+            }
+            
+            Text(text)
+                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
+                .font(.custom("Montserrat-Regular", size: 8))
+                .frame(alignment: .center)
+                .padding(.top, 3)
+        }
+    }.padding(.horizontal, 5)
+}

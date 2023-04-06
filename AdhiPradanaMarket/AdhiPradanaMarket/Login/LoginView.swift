@@ -12,8 +12,10 @@ struct LoginView: View {
     @State private var firstName: String = ""
     
     @State private var password: String = ""
-    @FocusState var focus1: Bool
-    @FocusState var focus2: Bool
+    
+    @FocusState var passwordLooksLikeString: Bool
+    @FocusState var passwordLooksLikeDots: Bool
+    
     @State var showPassword: Bool = false
     
     init() {
@@ -61,7 +63,7 @@ struct LoginView: View {
                             .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
                             .textContentType(.password)
                             .multilineTextAlignment(.center)
-                            .focused($focus1)
+                            .focused($passwordLooksLikeString)
                             .frame(width: 290, height: 30)
                             .cornerRadius(60)
                             .opacity(showPassword ? 1 : 0)
@@ -71,7 +73,7 @@ struct LoginView: View {
                             .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
                             .background(Color(red: 232/255, green: 232/255, blue: 232/255))
                             .textContentType(.password)
-                            .focused($focus2)
+                            .focused($passwordLooksLikeDots)
                             .multilineTextAlignment(.center)
                             .frame(width: 290, height: 30)
                             .cornerRadius(60)
@@ -81,7 +83,7 @@ struct LoginView: View {
                     
                     Button(action: {
                         showPassword.toggle()
-                        if showPassword { focus1 = true } else { focus2 = true }
+                        if showPassword { passwordLooksLikeString = true } else { passwordLooksLikeDots = true }
                     }, label: {
                         Image(systemName: self.showPassword ? "eye" : "eye.slash")
                             .font(.system(size: 14, weight: .regular))

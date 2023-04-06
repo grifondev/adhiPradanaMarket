@@ -28,25 +28,26 @@ struct ProfileView: View {
                     
                     Text("Profile")
                         .foregroundColor(Color(red: 0, green: 0, blue: 0))
-                        .font(.custom("Montserrat-Bold", size: 14))
-                        .padding(.top, 45)
+                        .font(.custom("Montserrat-Bold", size: 15))
+                        .padding(.top, 23)
                         .padding(.horizontal, 160)
                     
-                    if let data = data, let uiimage = UIImage(data: data) {
-                        Image(uiImage: uiimage)
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                            .clipShape(Circle())
-                            .padding(.top, 10)
-                            .padding(.horizontal, 157)
-                    } else {
-                        Image("Avatar_profile")
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                            .clipShape(Circle())
-                            .padding(.top, 10)
-                            .padding(.horizontal, 157)
+                    Group {
+                        if let data = data, let uiimage = UIImage(data: data) {
+                            Image(uiImage: uiimage)
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 60, height: 60)
+                        } else {
+                            Image("Avatar_profile")
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 60, height: 60)
+                        }
                     }
+                    .padding(.horizontal, 157)
+                    .padding(.top, 5)
+                    
                     
                     Button {
                         
@@ -61,7 +62,7 @@ struct ProfileView: View {
                                 .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
                         }
                     }
-                    .padding(.top, 5)
+                    //.padding(.top, 3)
                     .padding(.horizontal, 160)
                     .onChange(of: accountImage) { newValue in
                         guard let item = accountImage.first else {
@@ -80,9 +81,9 @@ struct ProfileView: View {
                     }
                     
                     Text(accountName)
-                        .font(.custom("Montserrat-Bold", size: 14))
+                        .font(.custom("Montserrat-Bold", size: 15))
                         .foregroundColor(Color(red: 63/255, green: 63/255, blue: 63/255))
-                        .padding(.top, 20)
+                        .padding(.top, 7)
                         .padding(.horizontal, 113)
                 }
                 
@@ -90,222 +91,27 @@ struct ProfileView: View {
                     
                 }   label: {
                     
-                    HStack {
-                        
+                    ZStack {
                         Text("Upload item")
                             .font(.custom("Montserrat-Bold", size: 16))
-                            .foregroundColor(Color(red: 234/255, green: 234/255, blue: 234/255))
-                            .frame(width: 290, height: 45)
+                            .frame(width: UIScreen.screenWidth*0.775, height: UIScreen.screenHeight*0.049)
                             .background(Color(red: 78/255, green: 85/255, blue: 215/255))
                             .cornerRadius(15)
+                        Image(systemName: "square.and.arrow.up")
+                            .padding(.leading, 50)
+                            .padding(.trailing, 240)
                     }
                 }
-                .padding(.top, 37)
-                .padding(.leading)
+                .foregroundColor(Color(red: 234/255, green: 234/255, blue: 234/255))
+                .padding(.top, 25)
                 
-                Group {
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        HStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                
-                                Image("card_profile")
-                                    .resizable()
-                                    .frame(width: 28, height: 22)
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Trade store")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 240, height: 14, alignment: .leading)
-                            
-                            Image("right_arrow_profile")
-                                .resizable()
-                                .frame(width: 5.5, height: 10)
-                        }
-                    }
-                    .padding(.top, 14)
-                    
-                    Button {
-                        
-                    } label: {
-                        HStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                
-                                Image("card_profile")
-                                    .resizable()
-                                    .frame(width: 28, height: 22)
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Payment method")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 240, height: 14, alignment: .leading)
-                            
-                            Image("right_arrow_profile")
-                                .resizable()
-                                .frame(width: 5.5, height: 10)
-                        }
-                    }
-                    .padding(.top, 14)
-                    
-                    Button {
-                        
-                    } label: {
-                        HStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                
-                                Image("card_profile")
-                                    .resizable()
-                                    .frame(width: 28, height: 22)
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Balance")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 200, height: 14, alignment: .leading)
-                            Text("$" + balance)
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 45, height: 14)
-                                .padding(.trailing, 0)
-                        }
-                    }
-                    .padding(.top, 14)
-                    
-                    
-                    Button {
-                        
-                    } label: {
-                        HStack
-                        {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("card_profile")
-                                    .resizable()
-                                    .frame(width: 28, height: 22)
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Trade history")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 240, height: 14, alignment: .leading)
-                            Image("right_arrow_profile")
-                                .resizable()
-                                .frame(width: 5.5, height: 10)
-                        }
-                    }
-                    .padding(.top, 14)
-                    
-                    Button {
-                        
-                    } label: {
-                        HStack
-                        {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("restore_arrows_profile")
-                                    .resizable()
-                                    .frame(width: 22, height: 18)
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Restore Purchase")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 240, height: 14, alignment: .leading)
-                            Image("right_arrow_profile")
-                                .resizable()
-                                .frame(width: 5.5, height: 10)
-                        }
-                    }
-                    .padding(.top, 14)
-                    
-                    Button {
-                        
-                    } label: {
-                        HStack
-                        {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image(systemName: "questionmark.circle")
-                                    .resizable()
-                                    .frame(width: 22, height: 22)
-                                    .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Help")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 240, height: 14, alignment: .leading)
-                            Image("right_arrow_profile")
-                                .resizable()
-                                .frame(width: 5.5, height: 10)
-                        }
-                    }
-                    .padding(.top, 14)
-                    
-                    NavigationLink(destination: SignInView(), label: {
-                        if logOutUser() == true {
-                            // to be continued...
-                        }
-                        HStack
-                        {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("log_out_profile")
-                                    .resizable()
-                                    .frame(width: 20, height: 18)
-                            }
-                            .padding(.trailing, 8)
-                            
-                            Text("Log out")
-                                .foregroundColor(Color(red: 4/255, green: 4/255, blue: 2/255))
-                                .font(.custom("Montserrat-Regular", size: 14))
-                                .frame(width: 240, height: 14, alignment: .leading)
-                            Image("right_arrow_profile")
-                                .resizable()
-                                .frame(width: 5.5, height: 10)
-                        }
-                    })
-                    .padding(.top, 14)
-                    
-                }
+                createOptions()
+                
+                Spacer()
                 
                 drawBottomTabBarProfile()
-                    .padding(.bottom, -20)
-                Spacer()
+                    .padding(.bottom, -50)
+                
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))
         }.navigationBarBackButtonHidden(true)
         

@@ -32,19 +32,16 @@ struct SignInView: View {
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: 290,height: 30)
                         .foregroundColor(Color(red: 232/255, green: 232/255, blue: 232/255))
-                        .cornerRadius(60)
                     TextField("First name", text: $firstName)
                         .font(.custom("Montserrat-Regular", size: 14))
                         .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
                         .background(Color(red: 232/255, green: 232/255, blue: 232/255))
                         .textContentType(.givenName)
                         .multilineTextAlignment(.center)
-                        .frame(width: 290, height: 30)
-                        .cornerRadius(60)
-                    
                 }
+                .frame(width: 290,height: 30)
+                .cornerRadius(60)
                 .padding(.horizontal, 43)
                 .padding(.top, 60)          //first name
                 
@@ -98,8 +95,9 @@ struct SignInView: View {
                         .background(Color(red: 78/255, green: 85/255, blue: 215/255, opacity: 1))
                         .cornerRadius(15)
                         .padding(.top,30)
-                }.buttonStyle(PlainButtonStyle())
-                    .alert("Email is not valid", isPresented: $showAlertMessage, actions: {
+                }
+                .buttonStyle(PlainButtonStyle())
+                .alert("Email is not valid", isPresented: $showAlertMessage, actions: {
                         Button("OK", role: .cancel) { }
                     })                  //sign in button
                 
@@ -159,7 +157,6 @@ struct SignInView: View {
         })
     }
 }
-
 
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {

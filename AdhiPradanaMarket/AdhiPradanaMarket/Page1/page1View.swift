@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-extension UIScreen {
-    public static let screenWidth = UIScreen.main.bounds.size.width
-    public static let screenHeight = UIScreen.main.bounds.size.height
-}
-
 struct page1View: View {
     
     @State private var searchText: String = "What are you looking for ?"
@@ -53,195 +48,44 @@ struct page1View: View {
                 .padding(.top, 10)
                 .frame(width: 315)
                 .padding(.trailing, 15)
+                
                 HStack {
                     Text("Location")
-                        .frame(width: 40, height: 9)
-                        .font(.custom("Montserrat-Regular", size: 9))
+                        .frame(width: 45, height: 10)
+                        .font(.custom("Montserrat-Regular", size: 10))
                         .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255, opacity: 1))
-                        .padding(.top, 15)
                     Image(systemName: "chevron.down")
                         .resizable()
                         .frame(width: 6, height: 3)
-                        .padding(.top, 15)
                         .padding(.leading, -5)
                 }
-                .padding(.leading, 290)
-                .padding(.top, -15)
+                .padding(.leading, 285)
                 
                 ZStack {
                     Rectangle()
                         .frame(width: UIScreen.screenWidth*0.7,height: 25)
                         .foregroundColor(Color(red: 245/255, green: 245/255, blue: 245/255))
-                        .cornerRadius(60)
-                    
                     TextField("What are you looking for ?", text: $searchText)
                         .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
                         .font(.custom("Montserrat-Regular", size: 10))
                         .multilineTextAlignment(.center)
-                        .frame(width: 290, height: 30)
-                        .cornerRadius(60)
-                    
+                        .frame(width: UIScreen.screenWidth*0.7, height: 30)
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
                         .frame(width: 30,height: 30)
-                        //.opacity(0.7)
                         .padding(.leading, 210)
                 }
-                //.padding(.top, 1)
+                .cornerRadius(60)
                 
-                HStack {
-                    Button {
-                        
-                    } label: {
-                        
-                        VStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 42, height: 38)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("phone_page1")
-                                    .resizable()
-                                    .frame(width: 12, height: 20)
-                            }
-                            
-                            Text("Phones")
-                                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
-                                .font(.custom("Montserrat-Regular", size: 8))
-                                .frame(alignment: .center)
-                                .padding(.top, 3)
-                        }
-                    }.padding(.horizontal, 5)
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        VStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 42, height: 38)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("headphones_page1")
-                                    .resizable()
-                                    .frame(width: 20, height: 18)
-                            }
-                            
-                            Text("Headphones")
-                                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
-                                .font(.custom("Montserrat-Regular", size: 8))
-                                .frame(alignment: .center)
-                                .padding(.top, 3)
-                        }
-                    }.padding(.horizontal, 5)
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        VStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 42, height: 38)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("games_page1")
-                                    .resizable()
-                                    .frame(width: 20, height: 10)
-                            }
-                            
-                            Text("Games")
-                                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
-                                .font(.custom("Montserrat-Regular", size: 8))
-                                .frame(alignment: .center)
-                                .padding(.top, 3)
-                        }
-                    }.padding(.horizontal, 5)
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        VStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 42, height: 38)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("car_page1")
-                                    .resizable()
-                                    .frame(width: 20, height: 14)
-                            }
-                            
-                            Text("Cars")
-                                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
-                                .font(.custom("Montserrat-Regular", size: 8))
-                                .frame(alignment: .center)
-                                .padding(.top, 3)
-                        }
-                    }.padding(.horizontal, 5)
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        VStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 42, height: 38)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("furniture_page1")
-                                    .resizable()
-                                    .frame(width: 22, height: 14)
-                            }
-                            
-                            Text("Furniture")
-                                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
-                                .font(.custom("Montserrat-Regular", size: 8))
-                                .frame(alignment: .center)
-                                .padding(.top, 3)
-                        }
-                    }.padding(.horizontal, 5)
-                    
-                    Button {
-                        
-                    } label: {
-                        
-                        VStack
-                        {
-                            ZStack {
-                                
-                                Circle()
-                                    .frame(width: 42, height: 38)
-                                    .foregroundColor(Color(red: 238/255, green: 239/255, blue: 244/255))
-                                Image("kids_page1")
-                                    .resizable()
-                                    .frame(width: 21, height: 17)
-                            }
-                            
-                            Text("Kids")
-                                .foregroundColor(Color(red: 166/255, green: 167/255, blue: 171/255))
-                                .font(.custom("Montserrat-Regular", size: 8))
-                                .frame(alignment: .center)
-                                .padding(.top, 3)
-                        }
-                    }.padding(.horizontal, 5)
-                }
+                createCategories()
                     .padding(.top, 12)
+                
                 Group {
                     HStack {
                         Text("Latest deals")
                             .font(.custom("Montserrat-SemiBold", size: 16))
-                            .padding(.top, 38)
-                            .padding(.leading, -10)
+                            .padding(.leading, 12)
                         
                         Spacer()
                         
@@ -251,12 +95,12 @@ struct page1View: View {
                             Text("View all")
                                 .font(.custom("Montserrat-Regular", size: 9))
                                 .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
-                                .padding(.trailing, 0)
-                                .padding(.top, 34)
+                                .padding(.trailing, 20)
                         }
                         
                     }
-                    .frame(width: 350, height: 36)
+                    .padding(.top, 38)
+                    .frame(width: UIScreen.screenWidth, height: 36)
                     .task {
                         if latestDealsMockedData.isEmpty {
                             loadLatestDealsFromMock()
@@ -310,7 +154,7 @@ struct page1View: View {
                             }
                         }
                     }
-                    
+                    .padding(.top, -10)
                 }
                 
                 Spacer()
@@ -368,12 +212,6 @@ struct page1View: View {
             }
         }
         taskForFlashSale.resume()
-    }
-}
-
-struct page1View_Previews: PreviewProvider {
-    static var previews: some View {
-        page1View()
     }
 }
 
@@ -444,7 +282,6 @@ struct latestDealsView : View {
             .padding(.top, 7)
     }
 }
-
 
 struct FlashSaleView : View {
     var category: String
@@ -538,5 +375,11 @@ struct FlashSaleView : View {
         }
         .frame(width: UIScreen.screenWidth*0.48, height: UIScreen.screenHeight*0.28)
         .padding(.leading, 6)
+    }
+}
+
+struct page1View_Previews: PreviewProvider {
+    static var previews: some View {
+        page1View()
     }
 }
