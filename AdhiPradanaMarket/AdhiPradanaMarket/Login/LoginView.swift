@@ -10,13 +10,15 @@ import SwiftUI
 struct LoginView: View {
     
     @State private var firstName: String = ""
-    
     @State private var password: String = ""
     
     @FocusState var passwordLooksLikeString: Bool
     @FocusState var passwordLooksLikeDots: Bool
     
     @State var showPassword: Bool = false
+    
+    @State var isDataValid: Bool = false
+    @State var showDataError: Bool = false
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
@@ -31,55 +33,48 @@ struct LoginView: View {
                     .font(.custom("Montserrat-SemiBold", size: 27))
                     .foregroundColor(Color(red: 22/255, green: 24/255, blue: 38/255))
                     .padding(.horizontal, 90)
-                    .padding(.top, 159)
+                    .padding(.top, 120)
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: 290,height: 30)
                         .foregroundColor(Color(red: 232/255, green: 232/255, blue: 232/255))
-                        .cornerRadius(60)
                     TextField("First name", text: $firstName)
                         .font(.custom("Montserrat-Regular", size: 14))
                         .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
                         .background(Color(red: 232/255, green: 232/255, blue: 232/255))
                         .textContentType(.givenName)
                         .multilineTextAlignment(.center)
-                        .frame(width: 290, height: 30)
-                        .cornerRadius(60)
-                    
                 }
+                .frame(width: UIScreen.screenWidth*0.77, height: UIScreen.screenHeight*0.036)
+                .cornerRadius(60)
                 .padding(.horizontal, 43)
-                .padding(.top, 80)
+                .padding(.top, 60)
                 
                 ZStack {
                     Rectangle()
-                        .frame(width: 290,height: 30)
+                        .frame(width: UIScreen.screenWidth*0.77,height: UIScreen.screenHeight*0.036)
                         .foregroundColor(Color(red: 232/255, green: 232/255, blue: 232/255))
                         .cornerRadius(60)
                     
-                    if showPassword {
-                        TextField("Password", text: $password)
-                            .font(.custom("Montserrat-Regular", size: 14))
-                            .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
-                            .textContentType(.password)
-                            .multilineTextAlignment(.center)
-                            .focused($passwordLooksLikeString)
-                            .frame(width: 290, height: 30)
-                            .cornerRadius(60)
-                            .opacity(showPassword ? 1 : 0)
-                    } else {
-                        SecureField("Password", text: $password)
-                            .font(.custom("Montserrat-Regular", size: 14))
-                            .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
-                            .background(Color(red: 232/255, green: 232/255, blue: 232/255))
-                            .textContentType(.password)
-                            .focused($passwordLooksLikeDots)
-                            .multilineTextAlignment(.center)
-                            .frame(width: 290, height: 30)
-                            .cornerRadius(60)
-                            .opacity(showPassword ? 0 : 1)
-                            .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
+                    Group {
+                        if showPassword {
+                            TextField("Password", text: $password)
+                                .focused($passwordLooksLikeString)
+                                .opacity(showPassword ? 1 : 0)
+                        } else {
+                            SecureField("Password", text: $password)
+                                .background(Color(red: 232/255, green: 232/255, blue: 232/255))
+                                .focused($passwordLooksLikeDots)
+                                .opacity(showPassword ? 0 : 1)
+                                .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
+                        }
                     }
+                    .font(.custom("Montserrat-Regular", size: 14))
+                    .foregroundColor(Color(red: 123/255, green: 123/255, blue: 123/255))
+                    .textContentType(.password)
+                    .multilineTextAlignment(.center)
+                    .frame(width: UIScreen.screenWidth*0.77, height: UIScreen.screenHeight*0.036)
+                    .cornerRadius(60)
                     
                     Button(action: {
                         showPassword.toggle()
@@ -96,15 +91,34 @@ struct LoginView: View {
                 .padding(.horizontal, 43)
                 .padding(.top, 35)
                 
-                NavigationLink(destination: ProfileView(), label:
-                {
+                Button {
+                    switch checkDataForValid(firstName: firstName, password: password) {
+                    case "OK":
+                        isDataValid = true
+                        showDataError = false
+                        break
+                    case "NOT":
+                        isDataValid = false
+                        showDataError = true
+                        break
+                    default:
+                        fatalError("Something went wrong when we are trying to log you in")
+                    }
+                } label: {
                     Text("Login").font(.custom("Montserrat-Bold", size: 16))
                         .foregroundColor(Color(red: 234/255, green: 234/255, blue: 234/255))
-                        .frame(width: 290, height: 45)
+                        .frame(width: UIScreen.screenWidth*0.77, height: UIScreen.screenHeight*0.056)
                         .background(Color(red: 78/255, green: 85/255, blue: 215/255))
                         .cornerRadius(15)
-                        .padding(.top,100)
+                        .padding(.top, 90)
+                }
+                .alert("Inserted data is not valid", isPresented: $showDataError, actions: {
+                    Button("OK", role: .cancel) { }
                 })
+                .navigationDestination(isPresented: $isDataValid, destination: {
+                    page1View()
+                })
+                
                 Spacer()
                 
             }.background(Color(red: 250/255, green: 249/255, blue: 255/255))

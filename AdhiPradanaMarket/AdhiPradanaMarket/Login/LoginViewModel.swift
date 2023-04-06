@@ -6,3 +6,10 @@
 //
 
 import SwiftUI
+
+func checkDataForValid(firstName: String, password: String) -> String {
+    if firstName == newUser.firstName && password == newUser.password {
+        return "OK"
+    }
+    return "NOT"
+}

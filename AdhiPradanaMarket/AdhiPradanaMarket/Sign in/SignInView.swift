@@ -109,7 +109,6 @@ struct SignInView: View {
                         .cornerRadius(15)
                         .padding(.top,30)
                 }
-                .buttonStyle(PlainButtonStyle())
                 .alert("Email is not valid", isPresented: $showInvalidEmailMessage, actions: {
                     Button("OK", role: .cancel) { }
                 })
