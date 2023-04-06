@@ -14,6 +14,17 @@ func isValidEmail(_ email: String) -> Bool {
     return emailPred.evaluate(with: email)
 }
 
-func registerUser(fName: String, lName: String, email: String) {
-    //Needs CoreData
+func isFieldsHaveValidData(first: String, last: String) -> Bool {
+    if first.isEmpty { return false }
+    if last.isEmpty { return false }
+    return true
+}
+
+func saveInsertedData(email: String, firstName: String, lastName: String) -> String {
+    if !isValidEmail(email) { return "Invalid email" }
+    if !isFieldsHaveValidData(first: firstName, last: lastName) { return "Invalid data"}
+    newUser.firstName = firstName
+    newUser.lastName = lastName
+    newUser.email = email
+    return "OK"
 }

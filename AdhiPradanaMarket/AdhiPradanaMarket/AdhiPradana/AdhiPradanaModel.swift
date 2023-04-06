@@ -7,49 +7,56 @@
 
 import SwiftUI
 
-class User {
+public class User {
     
-    private var password: String
-    private var email: String
-    private var firstName: String
-    private var lastName: String
+    private var _password: String
+    private var _email: String
+    private var _firstName: String
+    private var _lastName: String
     
     init(password: String, email: String, firstName: String, lastName: String) {
-        self.password = password
-        self.email = email
-        self.firstName = firstName
-        self.lastName = lastName
+        self._password = password
+        self._email = email
+        self._firstName = firstName
+        self._lastName = lastName
     }
     
-    func setPassword(newPassword: String) {
-        password = newPassword
+    public var password: String {
+        get {
+            return self._password
+        }
+        set {
+            self._password = newValue
+        }
     }
     
-    func getPassword() -> String {
-        return password
+    public var email: String {
+        get {
+            return self._email
+        }
+        set {
+            self._email = newValue
+        }
     }
     
-    func setEmail(newEmail: String) {
-        email = newEmail
+    public var firstName: String {
+        get {
+            return self._firstName
+        }
+        set {
+            self._firstName = newValue
+        }
     }
     
-    func getEmail() -> String {
-        return email
+    public var lastName: String {
+        get {
+            return self._lastName
+        }
+        set {
+            self._lastName = newValue
+        }
     }
     
-    func setFirstName(newFirstName: String) {
-        firstName = newFirstName
-    }
-    
-    func getFirstName() -> String {
-        return firstName
-    }
-    
-    func setLastMame(newLastName: String) {
-        lastName = newLastName
-    }
-    
-    func getLastMame() -> String {
-        return lastName
-    }
 }
+
+var newUser: User = User(password: "1", email: "1@1.ru", firstName: "1", lastName: "1")

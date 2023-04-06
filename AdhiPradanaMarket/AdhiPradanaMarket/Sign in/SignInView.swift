@@ -13,17 +13,20 @@ struct SignInView: View {
     @State private var lastName: String = ""
     @State private var email: String = ""
     
-    @State private var showAlertMessage: Bool = false
+    @State private var showInvalidEmailMessage: Bool = false
+    
+    @State private var showInvalidDataMessage: Bool = false
+    
+    @State private var showYouHaveRegistered: Bool = false
     
     init() {
         UINavigationBar.setAnimationsEnabled(false)
     }
     
     var body: some View {
-        NavigationView
+        NavigationStack
         {
             VStack (){
-                
                 Text("Sign in")
                     .font(.custom("Montserrat-SemiBold", size: 27))
                     .foregroundColor(Color(red: 22/255, green: 24/255, blue: 38/255))
@@ -82,11 +85,21 @@ struct SignInView: View {
                 .padding(.top, 30)          //email
                 
                 Button{
-                    if !isValidEmail(email) {
-                        showAlertMessage = true
-                    } else {
-                        registerUser(fName: firstName, lName: lastName, email: email)
-                        showAlertMessage = false
+                    switch saveInsertedData(email: email, firstName: firstName, lastName: lastName) {
+                    case "Invalid email":
+                        showInvalidEmailMessage = true
+                        showInvalidDataMessage = false
+                        showYouHaveRegistered = false
+                    case "Invalid data":
+                        showInvalidEmailMessage = false
+                        showInvalidDataMessage = true
+                        showYouHaveRegistered = false
+                    case "OK":
+                        showInvalidEmailMessage = false
+                        showInvalidDataMessage = false
+                        showYouHaveRegistered = true
+                    default:
+                        fatalError("Something went wrong when we are tried to store your data")
                     }
                 } label: {
                     Text("Sign in").font(.custom("Montserrat-Bold", size: 16))
@@ -97,10 +110,16 @@ struct SignInView: View {
                         .padding(.top,30)
                 }
                 .buttonStyle(PlainButtonStyle())
-                .alert("Email is not valid", isPresented: $showAlertMessage, actions: {
-                        Button("OK", role: .cancel) { }
-                    })                  //sign in button
-                
+                .alert("Email is not valid", isPresented: $showInvalidEmailMessage, actions: {
+                    Button("OK", role: .cancel) { }
+                })
+                .alert("Data is not valid. Please insert info in all fields", isPresented: $showInvalidDataMessage, actions: {
+                    Button("OK", role: .cancel) { }
+                })
+                .navigationDestination(isPresented: $showYouHaveRegistered, destination: {
+                    page1View()
+                })
+
                 HStack {
                     Text("Already have an account?")
                         .font(.custom("Montserrat-Regular", size: 10))
