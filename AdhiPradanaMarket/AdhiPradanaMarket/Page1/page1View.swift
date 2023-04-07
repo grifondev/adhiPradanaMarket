@@ -70,6 +70,7 @@ struct page1View: View {
                         .font(.custom("Montserrat-Regular", size: 10))
                         .multilineTextAlignment(.center)
                         .frame(width: UIScreen.screenWidth*0.7, height: 30)
+                        .textInputAutocapitalization(.never)
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(Color(red: 91/255, green: 91/255, blue: 91/255))
@@ -160,8 +161,8 @@ struct page1View: View {
                 }
                 
                 Spacer()
-                
-                drawBottomTabBarPage1()     //draws bottom bar
+                     
+                drawBottomBar(selectedPage: "homekit")  //draws bottom bar
                     .padding(.bottom, -50)
                 
             }
@@ -337,29 +338,6 @@ struct FlashSaleView : View {
     }
 }           //creates one flash sale element
 
-func drawBottomTabBarPage1() -> some View {
-    return ZStack {
-        Rectangle()
-            .fill(Color(red: 1, green: 1, blue: 1))
-            .frame(width: UIScreen.main.bounds.width, height: 100)
-            .cornerRadius(30)
-        HStack {
-            CreateSelectedInMenuButton(buttonName: "homekit")
-                CreateMenuButton(buttonName: "heart")
-                CreateMenuButton(buttonName: "cart")
-                CreateMenuButton(buttonName: "message")
-            NavigationLink(destination: ProfileView(), label: {
-                Image(systemName: "person")
-                    .resizable()
-                    .frame(width: 15, height: 15)
-                    .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
-            }).navigationBarBackButtonHidden(true)
-                .padding(.horizontal, 25)
-                .padding(.bottom, 30)
-        }
-    }
-}       //draws bottom bar
-
 func createCategories() -> some View {
     return HStack {
         createCategory(text: "Phones", image: "phone_page1")
@@ -396,7 +374,6 @@ func createCategory(text: String, image: String) -> some View {
         }
     }.padding(.horizontal, 5)
 }           //creates one category
-
 
 struct page1View_Previews: PreviewProvider {
     static var previews: some View {

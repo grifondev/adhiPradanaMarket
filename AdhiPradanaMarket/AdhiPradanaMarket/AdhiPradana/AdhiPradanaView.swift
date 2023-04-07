@@ -40,3 +40,42 @@ func CreateSelectedInMenuButton(buttonName: String) -> some View {
         }
     }
 }       //creates one button, that have circle
+
+func drawBottomBar(selectedPage: String) -> some View {
+    return ZStack {
+        Rectangle()
+            .fill(Color(red: 1, green: 1, blue: 1))
+            .frame(width: UIScreen.main.bounds.width, height: 100)
+            .cornerRadius(30)
+        HStack {
+            if selectedPage == "homekit" {
+                CreateSelectedInMenuButton(buttonName: "homekit")
+            } else {
+                NavigationLink(destination: page1View(), label: {
+                    Image(systemName: "homekit")
+                        .resizable()
+                        .frame(width: 15, height: 15)
+                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                }).navigationBarBackButtonHidden(true)
+                    .padding(.horizontal, 25)
+                    .padding(.bottom, 30)
+            }
+            CreateMenuButton(buttonName: "heart")
+            CreateMenuButton(buttonName: "cart")
+            CreateMenuButton(buttonName: "message")
+            if selectedPage == "homekit" {
+                NavigationLink(destination: ProfileView(), label: {
+                    Image(systemName: "person")
+                        .resizable()
+                        .frame(width: 15, height: 15)
+                        .foregroundColor(Color(red: 144/255, green: 144/255, blue: 144/255))
+                }).navigationBarBackButtonHidden(true)
+                    .padding(.horizontal, 25)
+                    .padding(.bottom, 30)
+            } else {
+                CreateSelectedInMenuButton(buttonName: "person")
+            }
+            
+        }
+    }
+}

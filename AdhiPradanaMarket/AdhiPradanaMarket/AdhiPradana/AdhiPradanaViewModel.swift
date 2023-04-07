@@ -9,6 +9,8 @@ import SwiftUI
 
 public var conditionsOfBottomTabBarItems: [String: Bool] = ["home": false,"heart": false,"cart": false,"messages": false,"profile": false]        // condition of bottomBar
 
+var newUser: User = User(password: "admin", email: "1@1.ru", firstName: "admin", lastName: "Adhi Pradana")     //object of user
+
 extension UIScreen {
     public static let screenWidth = UIScreen.main.bounds.size.width
     public static let screenHeight = UIScreen.main.bounds.size.height

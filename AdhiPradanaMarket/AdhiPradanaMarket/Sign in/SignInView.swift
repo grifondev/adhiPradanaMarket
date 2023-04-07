@@ -42,6 +42,7 @@ struct SignInView: View {
                         .background(Color(red: 232/255, green: 232/255, blue: 232/255))
                         .textContentType(.givenName)
                         .multilineTextAlignment(.center)
+                        .textInputAutocapitalization(.never)
                 }
                 .frame(width: 290,height: 30)
                 .cornerRadius(60)
@@ -61,6 +62,7 @@ struct SignInView: View {
                         .multilineTextAlignment(.center)
                         .frame(width: 290, height: 30)
                         .cornerRadius(60)
+                        .textInputAutocapitalization(.never)
                     
                 }
                 .padding(.horizontal, 43)
@@ -79,6 +81,7 @@ struct SignInView: View {
                         .multilineTextAlignment(.center)
                         .frame(width: 290, height: 30)
                         .cornerRadius(60)
+                        .textInputAutocapitalization(.never)
                     
                 }
                 .padding(.horizontal, 43)

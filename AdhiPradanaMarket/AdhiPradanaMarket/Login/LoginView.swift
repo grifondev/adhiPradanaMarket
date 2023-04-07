@@ -44,6 +44,8 @@ struct LoginView: View {
                         .background(Color(red: 232/255, green: 232/255, blue: 232/255))
                         .textContentType(.givenName)
                         .multilineTextAlignment(.center)
+                        .textInputAutocapitalization(.never)
+
                 }
                 .frame(width: UIScreen.screenWidth*0.77, height: UIScreen.screenHeight*0.036)
                 .cornerRadius(60)
@@ -61,12 +63,14 @@ struct LoginView: View {
                             TextField("Password", text: $password)
                                 .focused($passwordLooksLikeString)
                                 .opacity(showPassword ? 1 : 0)
+                                .textInputAutocapitalization(.never)
                         } else {
                             SecureField("Password", text: $password)
                                 .background(Color(red: 232/255, green: 232/255, blue: 232/255))
                                 .focused($passwordLooksLikeDots)
                                 .opacity(showPassword ? 0 : 1)
                                 .accessibilityIdentifier(/*@START_MENU_TOKEN@*/"Identifier"/*@END_MENU_TOKEN@*/)
+                                .textInputAutocapitalization(.never)
                         }
                     }
                     .font(.custom("Montserrat-Regular", size: 14))
